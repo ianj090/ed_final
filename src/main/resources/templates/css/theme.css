@@ -4282,7 +4282,7 @@ section {
 }
 
 .table-style1 {
-    max-width: 280px;
+    width: 1000px;
     margin-bottom: 30px;
 }
 
@@ -4305,7 +4305,9 @@ section {
 
 .table-data {
     height: 472px;
+
     overflow-y: auto;
+
 }
 
 .table-data thead tr td {
@@ -4915,14 +4917,16 @@ section {
 
 /* ----- Statistic ----- */
 .statistic {
-    padding-top: 57px;
+    padding-top: 50px;
 }
 
 .statistic__item {
     border: 1px solid #e5e5e5;
+    border-radius: 10px;
     background: #fff;
     padding: 20px 30px;
     position: relative;
+    min-width: 1050px;
     min-height: 180px;
     overflow: hidden;
     margin-bottom: 40px;
@@ -4937,7 +4941,7 @@ section {
 .statistic__item h2 {
     font-size: 36px;
     font-weight: 300;
-    color: #4272d7;
+    color: #310f12;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -4947,6 +4951,12 @@ section {
 }
 
 .statistic__item .desc {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(128, 128, 128, 0.6);
+}
+.statistic__item .alumnos {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 300;
@@ -4962,8 +4972,8 @@ section {
 .statistic__item .icon {
     display: inline-block;
     position: absolute;
-    bottom: -50px;
-    right: -7px;
+    bottom: 60px;
+    right: 50px;
 }
 
 .statistic__item .icon i {
