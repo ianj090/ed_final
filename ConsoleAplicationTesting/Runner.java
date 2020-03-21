@@ -1,12 +1,13 @@
-
 public class Runner {
     public static void main(String[] args) {
-        LinkedList obj = new LinkedList();
-//        obj.add(10);
-//        obj.add(11);
-//        obj.add(12);
-//        obj.add(13);
-//        obj.add(14);
-        System.out.println(obj.printL());;
+        AssignmentLinkedList obj = new AssignmentLinkedList();
+        Assignment homework1 = new Assignment();
+        homework1.setInstructionsOfThisActivity(
+                "Creat a Java Class using classes and learned knowledge aquired in the course.");
+        homework1.setScoreOfThisActivity(89.21);
+        obj.add(homework1);
+        Assignment homework2 = new Assignment();
+        obj.add(homework2);
+        System.out.println(obj.find(homework1).getData().getDateAdded().toString());
     }
 }
