@@ -1,26 +1,26 @@
-public class AssignmentLinkedList {
+public class CoursesLinkedList {
 
     public class Node {
         public Node next;
-        public Assignment data;
+        public Class data;
 
         public Node() {
         }
 
-        public Node(Assignment data) {
+        public Node(Class data) {
             this.data = data;
         }
 
-        public Node(Assignment data, Node next) {
+        public Node(Class data, Node next) {
             this.data = data;
             this.next = next;
         }
 
-        public void setData(Assignment data) {
+        public void setData(Class data) {
             this.data = data;
         }
 
-        public Assignment getData() {
+        public Class getData() {
             return this.data;
         }
 
@@ -36,19 +36,19 @@ public class AssignmentLinkedList {
     Node root;
     int size;
 
-    public AssignmentLinkedList() {
+    public CoursesLinkedList() {
         this.root = new Node();
         this.size = 0;
     }
 
-    public Node add(Assignment data) {
+    public Node add(Class data) {
         Node NewNode = new Node(data, this.root);
         this.root = NewNode;
         this.size += 1;
         return NewNode;
     }
 
-    public Node find(Assignment data) {
+    public Node find(Class data) {
         Node curr = this.root;
 
         while (curr != null) {
@@ -60,7 +60,7 @@ public class AssignmentLinkedList {
         return null;
     }
 
-    public boolean remove(Assignment data) {
+    public boolean remove(Class data) {
         Node curr = this.root;
         Node prev = null;
         while (curr != null) {
@@ -74,16 +74,6 @@ public class AssignmentLinkedList {
         }
         return false;
     }
-
-    // public String printL() {
-    // Node curr = this.root;
-    // String s = new String("");
-    // while (curr != null) {
-    // s = s + curr.getData() + ", ";
-    // curr = curr.getNext();
-    // }
-    // return s;
-    // }
 
     public void setSize(int size) {
         this.size = size;
