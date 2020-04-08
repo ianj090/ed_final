@@ -1,3 +1,4 @@
+package com.example.demo;
 
 public class Class {
     String ClassName;
@@ -15,6 +16,26 @@ public class Class {
         this.Credits = Credits;
         this.Descripcion = Description;
         // this.HomeworkAssignments = new LinkedList()
+    }
+
+    public String getClassName() {
+        return this.ClassName;
+    }
+
+    public String getTeacher() {
+        return this.Teacher;
+    }
+
+    public String getTA() {
+        return this.TA;
+    }
+
+    public float getCredits() {
+        return this.Credits;
+    }
+
+    public String getDescripcion() {
+        return this.Descripcion;
     }
 
     public void add_activity() {
