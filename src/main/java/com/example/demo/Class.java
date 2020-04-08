@@ -9,21 +9,29 @@ public class Class {
 
     AssignmentLinkedList ClassActivities;
 
-    Class(String ClassName, String Teacher, String TA, float Credits, String Description) {
-        this.ClassName = ClassName;
-        this.Teacher = Teacher;
-        this.TA = TA;
-        this.Credits = Credits;
-        this.Descripcion = Description;
-        // this.HomeworkAssignments = new LinkedList()
-    }
+//    Class(String ClassName, String Teacher, String TA, float Credits, String Description) {
+//        this.ClassName = ClassName;
+//        this.Teacher = Teacher;
+//        this.TA = TA;
+//        this.Credits = Credits;
+//        this.Descripcion = Description;
+//        // this.HomeworkAssignments = new LinkedList()
+//    }
 
     public String getClassName() {
         return this.ClassName;
     }
 
+    public void setClassName(String ClassName) {
+        this.ClassName = ClassName;
+    }
+
     public String getTeacher() {
         return this.Teacher;
+    }
+
+    public void setTeacher(String Teacher) {
+        this.Teacher = Teacher;
     }
 
     public String getTA() {

@@ -6,9 +6,12 @@
 </head>
 <body>
 <h1>Add Class</h1>
-<form action="#" th:action="@{/}" th:object="${greeting}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Message: <input type="text" th:field="*{content}" /></p>
+<form action="#" th:action="@{/}" th:object="${class1}" method="post">
+    <p>Class Name: <input type="text" th:field="*{ClassName}" /></p>
+    <p>Teacher: <input type="text" th:field="*{Teacher}" /></p>
+    <p>Teacher's Assistant: <input type="text" th:field="*{TA}" /></p>
+    <p>Amount of UMAs: <input type="text" th:field="*{Credits}" /></p>
+    <p>Description: <input type="text" th:field="*{Descripcion}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>
