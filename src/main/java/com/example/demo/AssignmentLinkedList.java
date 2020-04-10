@@ -2,7 +2,7 @@ package com.example.demo;
 
 public class AssignmentLinkedList {
 
-    public class Node {
+    public static class Node {
         public Node next;
         public Assignment data;
 
@@ -35,23 +35,33 @@ public class AssignmentLinkedList {
         }
     }
 
-    Node root;
-    int size;
+    private static Node root;
+    private static int size;
+    private static Assignment[] assignmentArray = new Assignment[5];
 
     public AssignmentLinkedList() {
-        this.root = new Node();
-        this.size = 0;
+        root = new Node();
+        size = 0;
     }
 
-    public Node add(Assignment data) {
-        Node NewNode = new Node(data, this.root);
-        this.root = NewNode;
-        this.size += 1;
-        return NewNode;
+    public void add(Assignment data) {
+        Node NewNode = new AssignmentLinkedList.Node(data);
+        NewNode.next = null;
+        if (root == null) {
+            root = NewNode;
+        }
+        else {
+            AssignmentLinkedList.Node last = root;
+            while (last.next != null) {
+                last = last.next;
+            }
+            last.next = NewNode;
+        }
+        size += 1;
     }
 
     public Node find(Assignment data) {
-        Node curr = this.root;
+        Node curr = root;
 
         while (curr != null) {
             if (curr.getData() == data) {
@@ -63,7 +73,7 @@ public class AssignmentLinkedList {
     }
 
     public boolean remove(Assignment data) {
-        Node curr = this.root;
+        Node curr = root;
         Node prev = null;
         while (curr != null) {
             if (curr.getData() == data) {
@@ -77,18 +87,48 @@ public class AssignmentLinkedList {
         return false;
     }
 
-    // public String printL() {
-    // Node curr = this.root;
-    // String s = new String("");
-    // while (curr != null) {
-    // s = s + curr.getData() + ", ";
-    // curr = curr.getNext();
-    // }
-    // return s;
-    // }
+    public String listNodes() {
+        Node current = root.next;
+        String result = "";
+
+        while (current != null) {
+            result = result + current.data.InstructionsOfThisActivity + "<br>";
+            current = current.next;
+        }
+        if (result.equals("")) {
+            return "None available";
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public Assignment[] toArray() {
+        Node current = root.next;
+        int i = 0;
+
+        while (current != null) {
+            if (i == assignmentArray.length) {
+                incrSize();
+            }
+            assignmentArray[i] = current.data;
+            i++;
+            current = current.next;
+        }
+
+        return assignmentArray;
+    }
+
+    public static void incrSize() {
+        size = assignmentArray.length + 5;
+        Assignment[] copy_array = new Assignment[size];
+        for (int i = 0; i < assignmentArray.length; i++) {
+            copy_array[i] = assignmentArray[i];
+        }
+        assignmentArray = copy_array;
+    }
 
     public void setSize(int size) {
-        this.size = size;
+        AssignmentLinkedList.size = size;
     }
 
     public Node getRoot() {
@@ -100,6 +140,6 @@ public class AssignmentLinkedList {
     }
 
     public void setRoot(Node root) {
-        this.root = root;
+        AssignmentLinkedList.root = root;
     }
 }

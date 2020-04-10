@@ -22,6 +22,10 @@ public class Class {
         return this.ClassName;
     }
 
+    public AssignmentLinkedList getClassActivities() {
+        return this.ClassActivities;
+    }
+
     public void setClassName(String ClassName) {
         this.ClassName = ClassName;
     }

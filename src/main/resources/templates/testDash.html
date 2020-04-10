@@ -355,20 +355,24 @@
             <!-- STATISTIC-->
             <section class="statistic">
                 <div class="section__content section__content--p30">
-                    <div class="container-fluid" th:each="course : ${classes}" th:if="${course} != null">
+                    <div class="container-fluid" th:each="assignment : ${assignments}" th:if="${assignment} != null">
                         <div class="row">
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item" width="300px">
-                                    <h2 class="number" th:text="${course.ClassName}" />
-                                    <span class="desc" th:text="${course.Teacher}" />
-                                    <div class="alumnos" th:text="'UMAs: ' + ${course.Credits}" />
+                                    <h2 class="number" th:text="${assignment.DateDue}" />
+                                    <span class="desc" th:text="${assignment.TypeOfActivity}" />
+                                    <div class="alumnos" th:text="'UMAs: ' + ${assignment.InstructionsOfThisActivity}" />
                                     <h1>Zona: 39/60</h1>
                                     <div class="icon">
-                                        <form th:action="@{/deleteClass}" th:object="${stored_class}" method="post">
-                                            <input type="hidden" name="delete_value" th:value="${course.ClassName}" />
-                                            <button class="btn btn-secondary btn-lg" type="submit" value="Submit">Delete</button>
-                                        </form>
+                                        <button class="btn btn-secondary btn-lg" onclick="window.location.href='/addAssignment'">
+                                            <i class="zmdi zmdi-account-o"></i>add assignment</button>
                                     </div>
+<!--                                    <div class="icon">-->
+
+<!--                                        <button type="button" class="btn btn-secondary btn-lg">Delete</button>-->
+<!--&lt;!&ndash;                                        <i class="zmdi zmdi-account-o"></i>&ndash;&gt;-->
+<!--                                    </div>-->
+
                                 </div>
                             </div>
                         </div>

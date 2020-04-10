@@ -38,6 +38,7 @@ public class CoursesLinkedList {
     private static Node root;
     private static int size;
     private static Class[] coursesArray = new Class[5];
+    public static Class copy;
 
     public CoursesLinkedList() {
         root = new Node();
@@ -60,7 +61,7 @@ public class CoursesLinkedList {
         size += 1;
     }
 
-    public Node find(Class data) {
+    public static Node find(Class data) {
         Node curr = root;
 
         while (curr != null) {
@@ -72,23 +73,29 @@ public class CoursesLinkedList {
         return null;
     }
 
-    public boolean remove(Class data) {
+    public static void remove(String value) {
         Node curr = root;
         Node prev = null;
         while (curr != null) {
-            if (curr.getData() == data) {
-                prev.setNext(curr.getNext());
-                this.setSize(this.getSize() - 1);
-                return true;
+            if (curr.data.ClassName.equals(value)) {
+                if (curr == root) {
+                    root = curr.next;
+                    size -= 1;
+                    break;
+                }
+                prev.next = curr.next;
+                size -= 1;
             }
             prev = curr;
-            curr = curr.getNext();
+            curr = curr.next;
         }
-        return false;
     }
 
     public static String listNodes() {
-        Node current = root.next;
+        if (root == null) {
+            return "None available";
+        }
+        Node current = root;
         String result = "";
 
         while (current != null) {
@@ -96,14 +103,17 @@ public class CoursesLinkedList {
             current = current.next;
         }
         if (result.equals("")) {
-            return "No songs added";
+            return "None available";
         }
         System.out.println(result);
         return result;
     }
 
     public static Class[] toArray() {
-        Node current = root.next;
+        if (root == null) {
+            return coursesArray;
+        }
+        Node current = root;
         int i = 0;
 
         while (current != null) {
@@ -127,7 +137,18 @@ public class CoursesLinkedList {
         coursesArray = copy_array;
     }
 
-    public void setSize(int size) {
+    public static void delArrayVal(String value) {
+        for(int i = 0; i < coursesArray.length; i++){
+            if(coursesArray[i].ClassName.equals(value)){
+                for(int j = i; j < coursesArray.length - 1; j++){
+                    coursesArray[j] = coursesArray[j+1];
+                }
+                break;
+            }
+        }
+    }
+
+    public static void setSize(int size) {
         CoursesLinkedList.size = size;
     }
 
@@ -135,7 +156,7 @@ public class CoursesLinkedList {
         return root;
     }
 
-    public int getSize() {
+    public static int getSize() {
         return size;
     }
 
