@@ -37,7 +37,7 @@ public class CoursesLinkedList {
 
     private static Node root;
     private static int size;
-    private static String[] coursesArray = new String[1];
+    private static Class[] coursesArray = new Class[5];
 
     public CoursesLinkedList() {
         root = new Node();
@@ -102,7 +102,7 @@ public class CoursesLinkedList {
         return result;
     }
 
-    public static String[] toArray() {
+    public static Class[] toArray() {
         Node current = root.next;
         int i = 0;
 
@@ -110,7 +110,7 @@ public class CoursesLinkedList {
             if (i == coursesArray.length) {
                 incrSize();
             }
-            coursesArray[i] = current.data.ClassName;
+            coursesArray[i] = current.data;
             i++;
             current = current.next;
         }
@@ -119,8 +119,8 @@ public class CoursesLinkedList {
     }
 
     public static void incrSize() {
-        size = coursesArray.length + 1;
-        String[] copy_array = new String[size];
+        size = coursesArray.length + 5;
+        Class[] copy_array = new Class[size];
         for (int i = 0; i < coursesArray.length; i++) {
             copy_array[i] = coursesArray[i];
         }

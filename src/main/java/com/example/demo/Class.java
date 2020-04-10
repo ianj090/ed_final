@@ -34,6 +34,10 @@ public class Class {
         this.Teacher = Teacher;
     }
 
+    public void setCredits(Float Credits) {
+        this.Credits = Credits;
+    }
+
     public String getTA() {
         return this.TA;
     }
