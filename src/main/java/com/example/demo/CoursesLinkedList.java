@@ -2,7 +2,7 @@ package com.example.demo;
 
 public class CoursesLinkedList {
 
-    public class Node {
+    public static class Node {
         public Node next;
         public Class data;
 
@@ -35,23 +35,33 @@ public class CoursesLinkedList {
         }
     }
 
-    Node root;
-    int size;
+    private static Node root;
+    private static int size;
+    private static String[] coursesArray = new String[1];
 
     public CoursesLinkedList() {
-        this.root = new Node();
-        this.size = 0;
+        root = new Node();
+        size = 0;
     }
 
-    public Node add(Class data) {
-        Node NewNode = new Node(data, this.root);
-        this.root = NewNode;
-        this.size += 1;
-        return NewNode;
+    public static void add(Class data) {
+        Node NewNode = new Node(data);
+        NewNode.next = null;
+        if (root == null) {
+            root = NewNode;
+        }
+        else {
+            Node last = root;
+            while (last.next != null) {
+                last = last.next;
+            }
+            last.next = NewNode;
+        }
+        size += 1;
     }
 
     public Node find(Class data) {
-        Node curr = this.root;
+        Node curr = root;
 
         while (curr != null) {
             if (curr.getData() == data) {
@@ -63,7 +73,7 @@ public class CoursesLinkedList {
     }
 
     public boolean remove(Class data) {
-        Node curr = this.root;
+        Node curr = root;
         Node prev = null;
         while (curr != null) {
             if (curr.getData() == data) {
@@ -77,8 +87,48 @@ public class CoursesLinkedList {
         return false;
     }
 
+    public static String listNodes() {
+        Node current = root.next;
+        String result = "";
+
+        while (current != null) {
+            result = result + current.data.ClassName + "<br>";
+            current = current.next;
+        }
+        if (result.equals("")) {
+            return "No songs added";
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public static String[] toArray() {
+        Node current = root.next;
+        int i = 0;
+
+        while (current != null) {
+            if (i == coursesArray.length) {
+                incrSize();
+            }
+            coursesArray[i] = current.data.ClassName;
+            i++;
+            current = current.next;
+        }
+
+        return coursesArray;
+    }
+
+    public static void incrSize() {
+        size = coursesArray.length + 1;
+        String[] copy_array = new String[size];
+        for (int i = 0; i < coursesArray.length; i++) {
+            copy_array[i] = coursesArray[i];
+        }
+        coursesArray = copy_array;
+    }
+
     public void setSize(int size) {
-        this.size = size;
+        CoursesLinkedList.size = size;
     }
 
     public Node getRoot() {
@@ -90,6 +140,6 @@ public class CoursesLinkedList {
     }
 
     public void setRoot(Node root) {
-        this.root = root;
+        CoursesLinkedList.root = root;
     }
 }

@@ -13,6 +13,7 @@ public class MainController {
     public String greetingDash(Model model) {
         CoursesLinkedList courses = new CoursesLinkedList();
         model.addAttribute("courses", courses);
+
         return "welcomeDash";
     }
 
@@ -23,8 +24,11 @@ public class MainController {
     }
 
     @PostMapping("/")
-    public String fullDash(@ModelAttribute Class course, Model model) {
-        model.addAttribute("name", course.ClassName);
+    public String fullDash(@ModelAttribute Class class1, Model model) {
+        CoursesLinkedList.add(class1);
+        CoursesLinkedList.listNodes();
+        model.addAttribute("classes", CoursesLinkedList.toArray());
+
         return "resultDash";
     }
 
