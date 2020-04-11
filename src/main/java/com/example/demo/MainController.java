@@ -8,18 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
 //    Dash == Dashboard osea la pagina principal de html
 
-//    @GetMapping("/")
-//    public String greetingDash(Model model) {
-//        CoursesLinkedList courses = new CoursesLinkedList();
-//        model.addAttribute("courses", courses);
-//        return "welcomeDash";
-//    }
-
-    @GetMapping("/addClass")
-    public String addClass(Model model) {
-        model.addAttribute("class1", new Class());
-        return "addClass";
-    }
+//    ------------------------------------------- Class Manager -----------------------------------------
 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String fullDash(Model model) {
@@ -29,8 +18,15 @@ public class MainController {
         return "resultDash";
     }
 
+    @GetMapping("/addClass")
+    public String addClass(Model model) {
+        model.addAttribute("class1", new Class());
+        return "addClass";
+    }
+
     @PostMapping("/addNewClass")
     public String addNewClass(@ModelAttribute Class class1) {
+        class1.ClassActivities = new AssignmentLinkedList();
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }
@@ -42,23 +38,41 @@ public class MainController {
         return "redirect:/";
     }
 
-//    @GetMapping("/addAssignment")
-//    public String addAssignment(Model model) {
-//        model.addAttribute("assignment1", new Assignment());
-//        return "addAssignment";
-//    }
-//
-//    @PostMapping("/test")
-//    public String testDash(@ModelAttribute Assignment assignment1, Model model) {
-//        Class course = CoursesLinkedList.copy;
-//        System.out.println(assignment1.DateDue);
-//        System.out.println(course.toString());
-//        System.out.println(course.ClassName);
-////        CoursesLinkedList.Node course_v = CoursesLinkedList.find(course);
-//        course.ClassActivities.add(assignment1);
-//        course.ClassActivities.listNodes();
-//        model.addAttribute("assignments", course.ClassActivities.toArray());
-//        return "testDash";
-//    }
+//    ------------------------------------------- Class Information Manager -----------------------------------------
+
+    Class saved_class;
+
+    @PostMapping("/saveClass")
+    public String saveClass(@RequestParam("selected_value") String stored_class) {
+        saved_class = CoursesLinkedList.find(stored_class);
+        return "redirect:/classInformation";
+    }
+
+    @RequestMapping(value="/classInformation", method=RequestMethod.GET)
+    public String classInformation(Model model) {
+        model.addAttribute("assignments", saved_class.ClassActivities.toArray());
+        model.addAttribute("stored_assignment", new Assignment());
+        return "classInformation";
+    }
+
+    @GetMapping("/addAssignment")
+    public String addAssignment(Model model) {
+        model.addAttribute("assignment1", new Assignment());
+        return "addAssignment";
+    }
+
+    @PostMapping("/addNewAssignment")
+    public String addNewAssignment(@ModelAttribute Assignment assignment1) {
+        saved_class.ClassActivities.add(assignment1);
+        return "redirect:/classInformation";
+    }
+
+    @PostMapping("/deleteAssignment")
+    public String removeAssignment(@RequestParam("delete_value") String stored_assignment) {
+        System.out.println(stored_assignment);
+        saved_class.ClassActivities.delArrayVal(stored_assignment);
+        saved_class.ClassActivities.remove(stored_assignment);
+        return "redirect:/classInformation";
+    }
 
 }

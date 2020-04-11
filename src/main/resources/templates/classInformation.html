@@ -342,8 +342,9 @@
                                             <li class="list-inline-item">Dashboard</li>
                                         </ul>
                                     </div>
-                                    <button class="au-btn au-btn-icon au-btn--green" onclick="window.location.href='/addClass'">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                    <button class="au-btn au-btn-icon au-btn--green" onclick="window.location.href='/addAssignment'">
+                                        <i class="zmdi zmdi-plus"></i>add Assignment
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -355,51 +356,24 @@
             <!-- STATISTIC-->
             <section class="statistic">
                 <div class="section__content section__content--p30">
-                    <div class="container-fluid">
+                    <div class="container-fluid" th:each="assignment : ${assignments}" th:if="${assignment} != null">
                         <div class="row">
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item" width="300px">
-                                    <h2 class="number">Calculo Multivariable</h2>
-                                    <span class="desc">Teacher: Christiaan Ketelar</span>
-                                    <div class="alumnos">classmates: 15</div>
-                                    <h1>Zona: 39/60</h1>
+                                    <h2 class="number" th:text="${assignment.Title}" />
+                                    <span class="desc" th:text="'Due: ' + ${assignment.DateDue}" />
+                                    <div class="alumnos" th:text="${assignment.InstructionsOfThisActivity}" />
+                                    <h1 class="number" th:text="'Score: ' + ${assignment.ScoreOfThisActivity}" />
                                     <div class="icon">
-
-                                        <button type="button" class="btn btn-secondary btn-lg">Delete</button>
-<!--                                        <i class="zmdi zmdi-account-o"></i>-->
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-3">
-                                <div class="statistic__item">
-                                    <h2 class="number">Estructura de Datos</h2>
-                                    <span class="desc">Teacher: Boiton Tello</span>
-                                    <div class="alumnos">classmates: 20</div>
-                                    <h1>Zona: 46/60</h1>
-                                    <div class="icon">
-                                        <button type="button" class="btn btn-secondary btn-lg">Delete</button>
-<!--                                        <i class="zmdi zmdi-shopping-cart"></i>-->
+                                        <form th:action="@{/deleteAssignment}" th:object="${stored_assignment}" method="post">
+                                            <input type="hidden" name="delete_value" th:value="${assignment.Title}" />
+                                            <button class="btn btn-secondary btn-lg" type="submit" value="Submit">Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-3">
-                                <div class="statistic__item">
-                                    <h2 class="number">Global Management and Entrepreneurship I</h2>
-                                    <span class="desc">Teacher: Mónica Zelaya</span>
-                                    <div class="alumnos">classmates: 8</div>
-                                    <h1>Zona: 57/60</h1>
-                                    <div class="icon">
-                                        <button type="button" class="btn btn-secondary btn-lg">Delete</button>
-<!--                                        <i class="zmdi zmdi-calendar-note"></i>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </section>
             <!-- END STATISTIC-->

@@ -45,7 +45,7 @@ public class AssignmentLinkedList {
     }
 
     public void add(Assignment data) {
-        Node NewNode = new AssignmentLinkedList.Node(data);
+        Node NewNode = new Node(data);
         NewNode.next = null;
         if (root == null) {
             root = NewNode;
@@ -72,27 +72,33 @@ public class AssignmentLinkedList {
         return null;
     }
 
-    public boolean remove(Assignment data) {
+    public void remove(String value) {
         Node curr = root;
         Node prev = null;
         while (curr != null) {
-            if (curr.getData() == data) {
-                prev.setNext(curr.getNext());
-                this.setSize(this.getSize() - 1);
-                return true;
+            if (curr.data.Title.equals(value)) {
+                if (curr == root) {
+                    root = curr.next;
+                    size -= 1;
+                    break;
+                }
+                prev.next = curr.next;
+                size -= 1;
             }
             prev = curr;
-            curr = curr.getNext();
+            curr = curr.next;
         }
-        return false;
     }
 
     public String listNodes() {
-        Node current = root.next;
+        if (root == null) {
+            return "None available";
+        }
+        AssignmentLinkedList.Node current = root;
         String result = "";
 
         while (current != null) {
-            result = result + current.data.InstructionsOfThisActivity + "<br>";
+            result = result + current.data.Title + "<br>";
             current = current.next;
         }
         if (result.equals("")) {
@@ -103,7 +109,10 @@ public class AssignmentLinkedList {
     }
 
     public Assignment[] toArray() {
-        Node current = root.next;
+        if (root == null) {
+            return assignmentArray;
+        }
+        Node current = root;
         int i = 0;
 
         while (current != null) {
@@ -125,6 +134,17 @@ public class AssignmentLinkedList {
             copy_array[i] = assignmentArray[i];
         }
         assignmentArray = copy_array;
+    }
+
+    public void delArrayVal(String value) {
+        for(int i = 0; i < assignmentArray.length; i++){
+            if(assignmentArray[i].Title.equals(value)){
+                for(int j = i; j < assignmentArray.length - 1; j++){
+                    assignmentArray[j] = assignmentArray[j+1];
+                }
+                break;
+            }
+        }
     }
 
     public void setSize(int size) {

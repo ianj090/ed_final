@@ -343,7 +343,8 @@
                                         </ul>
                                     </div>
                                     <button class="au-btn au-btn-icon au-btn--green" onclick="window.location.href='/addClass'">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                        <i class="zmdi zmdi-plus"></i>add Class
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -359,7 +360,12 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item" width="300px">
-                                    <h2 class="number" th:text="${course.ClassName}" />
+                                    <form th:action="@{/saveClass}" th:object="${stored_class}" method="post">
+                                        <h2 class="number">
+                                            <input type="hidden" name="selected_value" th:value="${course.ClassName}" />
+                                            <button type="submit" value="Submit" th:text="${course.ClassName}"/>
+                                        </h2>
+                                    </form>
                                     <span class="desc" th:text="${course.Teacher}" />
                                     <div class="alumnos" th:text="'UMAs: ' + ${course.Credits}" />
                                     <h1>Zona: 39/60</h1>

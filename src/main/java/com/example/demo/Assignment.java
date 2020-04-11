@@ -14,11 +14,20 @@ import java.util.Date;
 
 public class Assignment {
 
+    String Title;
     String DateAdded;
     String DateDue;
     String TypeOfActivity;
     double ScoreOfThisActivity;
     String InstructionsOfThisActivity;
+
+    public void setTitle(String Title) {
+        this.Title = Title;
+    }
+
+    public String getTitle() {
+        return this.Title;
+    }
 
     public void setDateAdded(String DateAdded) {
         this.DateAdded = DateAdded;

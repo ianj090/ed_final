@@ -38,7 +38,6 @@ public class CoursesLinkedList {
     private static Node root;
     private static int size;
     private static Class[] coursesArray = new Class[5];
-    public static Class copy;
 
     public CoursesLinkedList() {
         root = new Node();
@@ -61,14 +60,14 @@ public class CoursesLinkedList {
         size += 1;
     }
 
-    public static Node find(Class data) {
+    public static Class find(String value) {
         Node curr = root;
 
         while (curr != null) {
-            if (curr.getData() == data) {
-                return curr;
+            if (curr.data.ClassName.equals(value)) {
+                return curr.data;
             }
-            curr = curr.getNext();
+            curr = curr.next;
         }
         return null;
     }
