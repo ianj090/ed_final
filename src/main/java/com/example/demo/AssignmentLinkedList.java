@@ -35,7 +35,7 @@ public class AssignmentLinkedList {
         }
     }
 
-    private static Node root;
+    private Node root;
     private static int size;
     private static Assignment[] assignmentArray = new Assignment[5];
 
@@ -50,8 +50,11 @@ public class AssignmentLinkedList {
         if (root == null) {
             root = NewNode;
         }
+        else if (root.data == null){
+            root = NewNode;
+        }
         else {
-            AssignmentLinkedList.Node last = root;
+            Node last = root;
             while (last.next != null) {
                 last = last.next;
             }
@@ -94,7 +97,7 @@ public class AssignmentLinkedList {
         if (root == null) {
             return "None available";
         }
-        AssignmentLinkedList.Node current = root;
+        Node current = root;
         String result = "";
 
         while (current != null) {
@@ -104,7 +107,6 @@ public class AssignmentLinkedList {
         if (result.equals("")) {
             return "None available";
         }
-        System.out.println(result);
         return result;
     }
 
@@ -160,6 +162,6 @@ public class AssignmentLinkedList {
     }
 
     public void setRoot(Node root) {
-        AssignmentLinkedList.root = root;
+        this.root = root;
     }
 }

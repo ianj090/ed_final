@@ -104,7 +104,6 @@ public class CoursesLinkedList {
         if (result.equals("")) {
             return "None available";
         }
-        System.out.println(result);
         return result;
     }
 

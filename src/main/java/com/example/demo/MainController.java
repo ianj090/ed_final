@@ -12,7 +12,6 @@ public class MainController {
 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String fullDash(Model model) {
-        CoursesLinkedList.listNodes();
         model.addAttribute("classes", CoursesLinkedList.toArray());
         model.addAttribute("stored_class", new Class());
         return "resultDash";
@@ -50,6 +49,7 @@ public class MainController {
 
     @RequestMapping(value="/classInformation", method=RequestMethod.GET)
     public String classInformation(Model model) {
+//        saved_class.ClassActivities.listNodes();
         model.addAttribute("assignments", saved_class.ClassActivities.toArray());
         model.addAttribute("stored_assignment", new Assignment());
         return "classInformation";
@@ -69,7 +69,7 @@ public class MainController {
 
     @PostMapping("/deleteAssignment")
     public String removeAssignment(@RequestParam("delete_value") String stored_assignment) {
-        System.out.println(stored_assignment);
+        saved_class.ClassActivities.listNodes();
         saved_class.ClassActivities.delArrayVal(stored_assignment);
         saved_class.ClassActivities.remove(stored_assignment);
         return "redirect:/classInformation";
