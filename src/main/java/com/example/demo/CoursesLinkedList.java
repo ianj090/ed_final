@@ -75,6 +75,9 @@ public class CoursesLinkedList {
     public static void remove(String value) {
         Node curr = root;
         Node prev = null;
+        if (curr.data == null) {
+            curr = root.next;
+        }
         while (curr != null) {
             if (curr.data.ClassName.equals(value)) {
                 if (curr == root) {
@@ -96,6 +99,9 @@ public class CoursesLinkedList {
         }
         Node current = root;
         String result = "";
+        if (root.next != null) {
+            current = root.next;
+        }
 
         while (current != null) {
             result = result + current.data.ClassName + "<br>";
@@ -137,11 +143,13 @@ public class CoursesLinkedList {
 
     public static void delArrayVal(String value) {
         for(int i = 0; i < coursesArray.length; i++){
-            if(coursesArray[i].ClassName.equals(value)){
-                for(int j = i; j < coursesArray.length - 1; j++){
-                    coursesArray[j] = coursesArray[j+1];
+            if (coursesArray[i] != null) {
+                if (coursesArray[i].ClassName.equals(value)) {
+                    for (int j = i; j < coursesArray.length - 1; j++) {
+                        coursesArray[j] = coursesArray[j + 1];
+                    }
+                    break;
                 }
-                break;
             }
         }
     }
