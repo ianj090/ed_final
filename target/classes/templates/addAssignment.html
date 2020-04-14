@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Add Class</h1>
+<form action="#" th:action="@{/addNewAssignment}" th:object="${assignment1}" method="post">
+    <p>Assignment Title: <input type="text" th:field="*{Title}" /></p>
+    <p>Date Due: <input type="text" th:field="*{DateDue}" /></p>
+    <p>Type of Activity: <input type="text" th:field="*{TypeOfActivity}" /></p>
+    <p>Expected Score: <input type="text" th:field="*{ScoreOfThisActivity}" /></p>
+    <p>Instructions: <input type="text" th:field="*{InstructionsOfThisActivity}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

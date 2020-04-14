@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Add Class</h1>
+<form action="#" th:action="@{/addNewClass}" th:object="${class1}" method="post">
+    <p>Class Name: <input type="text" th:field="*{ClassName}" /></p>
+    <p>Teacher: <input type="text" th:field="*{Teacher}" /></p>
+    <p>Teacher's Assistant: <input type="text" th:field="*{TA}" /></p>
+    <p>Amount of UMAs: <input type="text" th:field="*{Credits}" /></p>
+    <p>Description: <input type="text" th:field="*{Descripcion}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
