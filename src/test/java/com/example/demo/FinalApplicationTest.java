@@ -37,19 +37,7 @@ class FinalApplicationTests {
         assertEquals("Test Class 3", testArray[3].ClassName);
         assertEquals("Test Class 1<br>Test Class 2<br>Test Class 3<br>", CoursesLinkedList.listNodes());
 
-        CoursesLinkedList.delArrayVal(course3.ClassName);
-        CoursesLinkedList.remove(course3.ClassName);
-        assertEquals("Test Class 1", testArray[1].ClassName);
-        assertEquals("Test Class 2", testArray[2].ClassName);
-        assertEquals("Test Class 1<br>Test Class 2<br>", CoursesLinkedList.listNodes());
-
-        course1.ClassActivities.toArray();
-        Assignment assignment1 = new Assignment();
-        assignment1.Title = "Test Assignment 1";
-        course1.ClassActivities.add(assignment1);
-        Assignment assignment2 = new Assignment();
-        assignment1.Title = "Test Assignment 2";
-        course1.ClassActivities.add(assignment2);
+        
 
     }
 
