@@ -1,0 +1,7 @@
+"Cálculo Multivariable","Christiaan Ketelaar","Samuel Rodas","3.5","Aprende cálculo de múltiples variables"
+"Estructura de datos","Fernando Boiton","Tórtola","3.5","Aprende estructuras de datos"
+"Global Management and Entreprenurship","Gladys Herrera","Isabel Lewin","3.5","Aprende management"
+"Cost Analysis","Carolina Melchor","Leonel Velasco","3.5","Aprende costos"
+"Estadística 1","Mario Gómez","Carlos Morales","3.5","Aprende estadística"
+"Microeconomía","Stefany Bolaños","Shadi Kawaneh","3.5","Aprende Microeconomía"
+
