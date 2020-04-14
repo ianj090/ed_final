@@ -37,7 +37,30 @@ class FinalApplicationTests {
         assertEquals("Test Class 3", testArray[3].ClassName);
         assertEquals("Test Class 1<br>Test Class 2<br>Test Class 3<br>", CoursesLinkedList.listNodes());
 
-        
+        CoursesLinkedList.delArrayVal(course3.ClassName);
+        CoursesLinkedList.remove(course3.ClassName);
+        assertEquals("Test Class 1", testArray[1].ClassName);
+        assertEquals("Test Class 2", testArray[2].ClassName);
+        assertEquals("Test Class 1<br>Test Class 2<br>", CoursesLinkedList.listNodes());
+
+        course1.ClassActivities.toArray();
+        Assignment assignment1 = new Assignment();
+        assignment1.Title = "Test Assignment 1";
+        course1.ClassActivities.add(assignment1);
+        Assignment assignment2 = new Assignment();
+        assignment2.Title = "Test Assignment 2";
+        course1.ClassActivities.add(assignment2);
+
+        Assignment[] assignmentTestArray = course1.ClassActivities.toArray();
+        assertEquals("Test Assignment 1", assignmentTestArray[0].Title); // se salta el o ya que thymeleaf crea un valor null al inicializar el array
+        assertEquals("Test Assignment 2", assignmentTestArray[1].Title);
+        assertEquals("Test Assignment 1<br>Test Assignment 2<br>", course1.ClassActivities.listNodes());
+
+        course1.ClassActivities.delArrayVal(assignment2.Title);
+        course1.ClassActivities.remove(assignment2.Title);
+        assertEquals("Test Assignment 1", assignmentTestArray[0].Title);
+        assertEquals("Test Assignment 1<br>", course1.ClassActivities.listNodes());
+
 
     }
 
