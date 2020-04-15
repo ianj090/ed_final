@@ -306,12 +306,12 @@
         <h1>Add Class</h1>
         <form action="#" th:action="@{/addNewClass}" th:object="${class1}" method="post">
             <p>Class Name:</p> <p><input class="au-input au-input--full" type="text" th:field="*{ClassName}" /></p>
+            <p>Description:</p><p> <input class="au-input au-input--full" type="text" th:field="*{Descripcion}" /></p>
             <p>Teacher:</p> <p><input class="au-input au-input--w435" type="text" th:field="*{Teacher}" /></p>
             <p>Teacher's Assistant: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{TA}" /></p>
             <p>Amount of UMAs:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Credits}" /></p>
-            <p>Description:</p><p> <input class="au-input au-input--full" type="text" th:field="*{Descripcion}" /></p>
             <br>
-            <p><button type="button" class="btn btn-outline-danger" padding="20px"><input type="submit" value="Submit" /></button>  <button type="button" class="btn btn-outline-warning"> <input type="reset" value="Reset" /></button></p>
+            <p><button class="btn btn-outline-danger" type="submit" value="Submit">Submit</button>  <button type="button" class="btn btn-outline-warning"> <input type="reset" value="Reset" /></button></p>
         </form>
     </section>
 </div>
