@@ -1,4 +1,4 @@
-**Product Requirements Document**
+# **Product Requirements Document**
 
 Online Class Management System
 
@@ -8,7 +8,7 @@ Online Class Management System
 4. User flow and design
 5. Class Topics
 
-1. 1.Objective
+### 1. 1.Objective
 
 | Vision | _Class Manager for university courses, complete with classes, schedules, and grade calculators._ |
 | --- | --- |
@@ -16,7 +16,7 @@ Online Class Management System
 | Initiatives | _Facilitate organization and management for classes&#39; experience_ |
 | Persona(s) | _Students_ |
 
-1. 2.Release
+### 1. 2.Release
 
 | Release | _Parcial 1_ |
 | --- | --- |
@@ -39,7 +39,7 @@ Online Class Management System
 | Features | _Grade Manager._ |
 | Dependencies | _Release dependencies_ |
 
-1. 3.Features
+### 1. 3.Features
 
 | Feature | _Add/Remove classes_ |
 | --- | --- |
@@ -91,11 +91,11 @@ Online Class Management System
 | Not doing | _Not affecting class content or data just creating a simulation based on user input._ |
 | Acceptance criteria | _A user will be able to experience a way to get assigned to classes similar to the existing feature in MiU. Though the hope is to improve the system already in place, The feature must at least complete the main purpose._ |
 
-1. 4.User flow and design
+### 1. 4.User flow and design
 
 (Images in file sent over Slack)
 
-1. 5.Class Topics
+### 1. 5.Class Topics
 
 |  Class Topic |  Feature |
 | --- | --- |
@@ -113,3 +113,64 @@ Online Class Management System
 | Hashing and Collision |  Classes |
 | Searching and Sorting |  Classes |
 | Files and Their Organization |  Folders within Classes containing Class Information |
+
+# Profiling
+## /addAssignment
+![](./profiling/results_images/addAssignment/Graph_Results.PNG)
+![](./profiling/results_images/addAssignment/Results_Tree.PNG)
+
+## /addClass
+![](./profiling/results_images/addClass/Graph_Results.PNG)
+![](./profiling/results_images/addClass/Results_Tree.PNG)
+
+## /addNewAssignment
+![](./profiling/results_images/addNewAssignment/Graph_Results.PNG)
+![](./profiling/results_images/addNewAssignment/Results_Tree.PNG)
+
+## /addNewClass
+![](./profiling/results_images/addNewClass/Graph_Results.PNG)
+![](./profiling/results_images/addNewClass/Results_Tree.PNG)
+
+## /classInformation
+![](./profiling/results_images/classInformation/Graph_Results.PNG)
+![](./profiling/results_images/classInformation/Results_Tree.PNG)
+
+## /dash
+![](./profiling/results_images/dash/Graph_Results.PNG)
+![](./profiling/results_images/dash/Results_Tree.PNG)
+
+## /deleteAssignment
+![](./profiling/results_images/deleteAssignment/Graph_Results.PNG)
+![](./profiling/results_images/deleteAssignment/Results_Tree.PNG)
+
+## /deleteClass
+![](./profiling/results_images/deleteClass/Graph_Results.PNG)
+![](./profiling/results_images/deleteClass/Results_Tree.PNG)
+
+![](./profiling/results_images/saveClass/Graph_Results.PNG)
+![](./profiling/results_images/saveClass/Results_Tree.PNG)
+
+# Unit Testing
+Todos los métodos y objetos se probaron en el método contextloads() que retornó un valor satisfactorio.
+
+![](./unit/unit_test.PNG)
+
+# Diagrama de objetos
+## Assignment Object
+Este se encarga de almacenar tareas académicas en la applicación, almacena:
+1. Instrucciones 
+2. Fecha de entrega & fecha agregada 
+3. Nota media vez este disponible 
+
+## Class Object
+Este es el objeto curso, almacena el numbre del catedrático, auxiliar, nombre del curso, calificación, etc.  
+
+## AssingmentLinkedList Object 
+Este es una linked list particular con métodos pertinentes al objeto assignment. Es una linked list queue entonces tiene cola.  
+
+## CoursesLinkedList Object 
+Es un objeto particular para almacenar las instancias de los objetos Class en memoria, este es una linked list también. 
+
+# Estructuras de datos empleadas
+Se hizo uso de arrays y linked lists para la primera entrega. 
+
