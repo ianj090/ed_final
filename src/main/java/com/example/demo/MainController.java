@@ -81,7 +81,13 @@ public class MainController {
 
     @RequestMapping(value="/gradeManager", method=RequestMethod.GET)
     public String gradeManager(Model model) {
-//        model.addAttribute("average", GradeManager.findAverage());
+        ScoreHeap obj2 = new ScoreHeap(100);
+        obj2.insert(99);
+        obj2.insert(1090);
+        obj2.insert(0);
+        model.addAttribute("max_val", ScoreHeap.getMax());
+        model.addAttribute("min_val", ScoreHeap.getMin());
+//        model.addAttribute("average", ScoreHeap.findAverage());
 //        model.addAttribute("weighted_average", GradeManager.findWeightedAverage());
 //        model.addAttribute("stored_assignment", new Assignment());
         return "gradesDash";

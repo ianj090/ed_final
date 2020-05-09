@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+
 
 <head>
     <!-- Required meta tags-->
@@ -62,12 +63,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/schedule">
+                        <a href="/scheduleDash">
                             <i class="fas fa-calendar-alt"></i>Schedule</a>
 
                     </li>
                     <li>
-                        <a href="/gradeManager">
+                        <a href="#">
                             <i class="fas fa-chart-bar"></i>Grades</a>
                     </li>
                 </ul>
@@ -313,7 +314,7 @@
                     </div>
                     <div class="card-body">
                         <div class="typo-headers">
-                            <h1 class="pb-2 display-4">Very Important Information H1</h1>
+                            <h1 th:text="'Zona: ' + ${max_val}" />
                             <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
                             <h3 class="pb-2 display-5">Articles & Block Headings H3</h3>
                             <h4 class="pb-2 display-5">Random Tiny Heading H4</h4>

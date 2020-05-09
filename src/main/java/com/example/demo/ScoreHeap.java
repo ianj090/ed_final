@@ -1,15 +1,17 @@
+package com.example.demo;
+
 /* Max heap para trabajar los grades */
 /* No admite números negativos */
 public class ScoreHeap { 
     double nota_mas_alta; 
     int length; 
-    double Heap_Array[]; 
+    static double[] Heap_Array;
   
     ScoreHeap(double nota_mas_alta){ 
         this.nota_mas_alta = nota_mas_alta; 
         this.length = 0; 
-        this.Heap_Array = new double[(int)(this.nota_mas_alta + 1)]; 
-        this.Heap_Array[0] = Integer.MAX_VALUE; 
+        Heap_Array = new double[(int)(this.nota_mas_alta + 1)];
+        Heap_Array[0] = Integer.MAX_VALUE;
     } 
   
     private int parent(int i){ 
@@ -24,11 +26,8 @@ public class ScoreHeap {
         return (2 * i) + 1; 
     } 
   
-    private boolean isLeaf(int i){ 
-        if ((i >= (length / 2)) && (i <=length)) { 
-            return true; 
-        } 
-        return false; 
+    private boolean isLeaf(int i){
+        return (i >= (length / 2)) && (i <= length);
     } 
   
     private void swap(int fpos, int spos){ 
@@ -68,14 +67,14 @@ public class ScoreHeap {
     } 
 
 
-    public double getMax() { 
+    public static double getMax() {
         // double popped = Heap_Array[1]; 
         // Heap_Array[1] = Heap_Array[length--]; 
         // maxHeapify(1); 
         return Heap_Array[1]; 
     } 
 
-    public double getMin() {
+    public static double getMin() {
         return Heap_Array[Heap_Array.length - 1];
     }
 } 

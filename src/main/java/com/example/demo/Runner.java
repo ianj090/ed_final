@@ -20,5 +20,15 @@ public class Runner {
         Assignment homework2 = new Assignment();
         obj.add(homework2);
         System.out.println(obj.find(homework1).getData().getDateAdded().toString());
+
+        ScoreHeap obj2 = new ScoreHeap(100);
+        obj2.insert(99);
+        obj2.insert(1090);
+        obj2.insert(0);
+        obj2.insert(98);
+        obj2.insert(90);
+        obj2.insert(100);
+        System.out.println(obj2.getMax());
+        System.out.println(obj2.getMin());
     }
 }
