@@ -60,12 +60,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/scheduleDash">
+                        <a href="/schedule">
                             <i class="fas fa-calendar-alt"></i>Schedule</a>
 
                     </li>
                     <li>
-                        <a href="/gradesDash">
+                        <a href="/gradeManager">
                             <i class="fas fa-chart-bar"></i>Grades</a>
                     </li>
                 </ul>
@@ -305,11 +305,16 @@
         <br>
         <h1>Add Class</h1>
         <form action="#" th:action="@{/addNewClass}" th:object="${class1}" method="post">
-            <p>Class Name:</p> <p><input class="au-input au-input--full" type="text" th:field="*{ClassName}" /></p>
-            <p>Description:</p><p> <input class="au-input au-input--full" type="text" th:field="*{Descripcion}" /></p>
-            <p>Teacher:</p> <p><input class="au-input au-input--w435" type="text" th:field="*{Teacher}" /></p>
-            <p>Teacher's Assistant: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{TA}" /></p>
-            <p>Amount of UMAs:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Credits}" /></p>
+            <p>Class Name:</p> <p><input class="au-input au-input--full" type="text" th:field="*{ClassName}" required/></p>
+            <p>Description:</p><p> <input class="au-input au-input--full" type="text" th:field="*{Descripcion}" required/></p>
+            <p>Teacher:</p> <p><input class="au-input au-input--w435" type="text" th:field="*{Teacher}" required/></p>
+            <p>Teacher's Assistant: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{TA}" required/></p>
+            <p>Amount of UMAs:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Credits}" required/></p>
+            <p>Homework Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{HomeWork}" required/></p>
+            <p>Classwork Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{ClassWork}" required/></p>
+            <p>Quiz Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Quiz}" required/></p>
+            <p>Test Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Test}" required/></p>
+            <p>Final Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Final}" required/></p>
             <br>
             <p><button class="btn btn-outline-danger" type="submit" value="Submit">Submit</button>  <button class="btn btn-outline-warning" type="reset" value="Reset">Reset</button></p>
         </form>

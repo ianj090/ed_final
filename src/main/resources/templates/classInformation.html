@@ -363,6 +363,7 @@
                                     <h2 class="number" th:text="${assignment.Title}" />
                                     <span class="desc" th:text="'Due: ' + ${assignment.DateDue}" />
                                     <div class="alumnos" th:text="${assignment.InstructionsOfThisActivity}" />
+                                    <div class="alumnos" th:text="${assignment.TypeOfActivity}" />
                                     <h1 class="number" th:text="'Score: ' + ${assignment.ScoreOfThisActivity}" />
                                     <div class="icon">
                                         <form th:action="@{/deleteAssignment}" th:object="${stored_assignment}" method="post">

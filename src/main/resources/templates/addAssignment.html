@@ -60,12 +60,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/scheduleDash">
+                        <a href="/schedule">
                             <i class="fas fa-calendar-alt"></i>Schedule</a>
 
                     </li>
                     <li>
-                        <a href="/gradesDash">
+                        <a href="/gradeManager">
                             <i class="fas fa-chart-bar"></i>Grades</a>
                     </li>
                 </ul>
@@ -305,11 +305,20 @@
         <br>
         <h1>Add Assignment</h1>
         <form action="#" th:action="@{/addNewAssignment}" th:object="${assignment1}" method="post">
-            <p>Assignment Title: </p> <p><input class="au-input au-input--full" type="text" th:field="*{Title}" /></p>
-            <p>Instructions: </p> <p><input class="au-input au-input--full" type="text" th:field="*{InstructionsOfThisActivity}" /></p>
-            <p>Type of Activity: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{TypeOfActivity}" /></p>
-            <p>Date Due: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{DateDue}" /></p>
-            <p>Expected Score: </p> <p><input class="au-input au-input--w300" type="text" th:field="*{ScoreOfThisActivity}" /></p>
+            <p>Assignment Title: </p> <p><input class="au-input au-input--full" type="text" th:field="*{Title}" required/></p>
+            <p>Instructions: </p> <p><input class="au-input au-input--full" type="text" th:field="*{InstructionsOfThisActivity}" required/></p>
+            <p>Date Due: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{DateDue}" required/></p>
+            <p>Expected Score: </p> <p><input class="au-input au-input--w300" type="text" th:field="*{ScoreOfThisActivity}" required/></p>
+            <p>Type of Activity: </p>
+            <p>
+                <select id="assignmentType" name="assignmentType" th:field="*{TypeOfActivity}" required>
+                    <option value="homework">Homework</option>
+                    <option value="classwork">Classwork</option>
+                    <option value="quiz">Quiz</option>
+                    <option value="test">Test</option>
+                    <option value="final">Final</option>
+                </select>
+            </p>
             <br>
             <p><button class="btn btn-outline-danger" type="submit" value="Submit" >Submit</button>  <button  class="btn btn-outline-warning" type="reset" value="Reset" >Reset</button></p>
         </form>

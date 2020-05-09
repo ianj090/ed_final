@@ -37,7 +37,10 @@ public class AssignmentLinkedList {
 
     private Node root;
     private static int size;
-    private static Assignment[] assignmentArray = new Assignment[5];
+    public Assignment[] assignmentArray = new Assignment[5];
+
+// --------------------------------------------------------------------------------------------
+
 
     public AssignmentLinkedList() {
         root = new Node();
@@ -129,7 +132,7 @@ public class AssignmentLinkedList {
         return assignmentArray;
     }
 
-    public static void incrSize() {
+    public void incrSize() {
         size = assignmentArray.length + 5;
         Assignment[] copy_array = new Assignment[size];
         for (int i = 0; i < assignmentArray.length; i++) {
@@ -148,6 +151,8 @@ public class AssignmentLinkedList {
             }
         }
     }
+
+// --------------------------------------------------------------------------------------------
 
     public void setSize(int size) {
         AssignmentLinkedList.size = size;

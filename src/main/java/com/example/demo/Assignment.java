@@ -3,15 +3,6 @@ package com.example.demo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*Se necesita para tareasc on fecha de vencimiento:
-*   - Mes en el que se entrega la tarea
-*   - Día en el que se entrega la tarea
-
-
-* Se necesita para tareas sin fecha de vencimiento:
-*   - Sólo necesita inicializar el objeto
-*/
-
 public class Assignment {
 
     String Title;
@@ -20,6 +11,8 @@ public class Assignment {
     String TypeOfActivity;
     double ScoreOfThisActivity;
     String InstructionsOfThisActivity;
+
+// --------------------------------------------------------------------------------------------
 
     public void setTitle(String Title) {
         this.Title = Title;
@@ -68,6 +61,8 @@ public class Assignment {
     public void setInstructionsOfThisActivity(String InstructionsOfThisActivity) {
         this.InstructionsOfThisActivity = InstructionsOfThisActivity;
     }
+
+// --------------------------------------------------------------------------------------------
 
     /* CONSTRUCTORS */
     Assignment() { // ZERO ARG CONSTRUCTOR

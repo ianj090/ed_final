@@ -83,12 +83,12 @@
 <!--                            </ul>-->
                         </li>
                         <li>
-                            <a href="/scheduleDash">
+                            <a href="/schedule">
                                 <i class="fas fa-calendar-alt"></i>Schedule</a>
 
                         </li>
                         <li>
-                            <a href="/gradesDash">
+                            <a href="/gradeManager">
                                 <i class="fas fa-chart-bar"></i>Grades</a>
                         </li>
                     </ul>
@@ -368,7 +368,7 @@
                                     </form>
                                     <span class="desc" th:text="${course.Teacher}" />
                                     <div class="alumnos" th:text="'UMAs: ' + ${course.Credits}" />
-                                    <h1>Zona: 39/60</h1>
+                                    <h1 th:text="'Zona: ' + ${course.Score} + '/' + ${course.Total}" />
                                     <div class="icon">
                                         <form th:action="@{/deleteClass}" th:object="${stored_class}" method="post">
                                             <input type="hidden" name="delete_value" th:value="${course.ClassName}" />
