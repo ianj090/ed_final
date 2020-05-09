@@ -37,6 +37,11 @@ public class MainController {
         return "redirect:/";
     }
 
+    @RequestMapping(value="/gradesDash", method=RequestMethod.GET)
+    public String gradesDash(Model model) {
+        return "gradesDash";
+    }
+
 //    ------------------------------------------- Class Information Manager -----------------------------------------
 
     Class saved_class;
