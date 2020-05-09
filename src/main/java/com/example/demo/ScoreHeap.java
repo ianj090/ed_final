@@ -3,16 +3,16 @@ package com.example.demo;
 /* Max heap para trabajar los grades */
 /* No admite números negativos */
 public class ScoreHeap { 
-    double nota_mas_alta; 
+    int cantidad_de_notas; 
     int length; 
     static double[] Heap_Array;
   
-    ScoreHeap(double nota_mas_alta){ 
-        this.nota_mas_alta = nota_mas_alta; 
+    ScoreHeap(int cantidad_de_notas){ 
+        this.cantidad_de_notas = cantidad_de_notas;
         this.length = 0; 
-        Heap_Array = new double[(int)(this.nota_mas_alta + 1)];
+        Heap_Array = new double[cantidad_de_notas + 1];
         Heap_Array[0] = Integer.MAX_VALUE;
-    } 
+    }
   
     private int parent(int i){ 
         return (i / 2); 
