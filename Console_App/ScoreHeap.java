@@ -1,18 +1,19 @@
 /* Max heap para trabajar los grades */
+/* No admite números negativos */
 public class ScoreHeap { 
-    int nota_mas_alta; 
+    double nota_mas_alta; 
     int length; 
-    int Heap_Array[]; 
+    double Heap_Array[]; 
   
-    ScoreHeap(int nota_mas_alta){ 
+    ScoreHeap(double nota_mas_alta){ 
         this.nota_mas_alta = nota_mas_alta; 
         this.length = 0; 
-        this.Heap_Array = new int[this.nota_mas_alta + 1]; 
+        this.Heap_Array = new double[(int)(this.nota_mas_alta + 1)]; 
         this.Heap_Array[0] = Integer.MAX_VALUE; 
     } 
   
     private int parent(int i){ 
-        return i / 2; 
+        return (i / 2); 
     } 
   
     private int leftChild(int i){ 
@@ -24,26 +25,27 @@ public class ScoreHeap {
     } 
   
     private boolean isLeaf(int i){ 
-        if (i >= (length / 2) && i <=length) { 
+        if ((i >= (length / 2)) && (i <=length)) { 
             return true; 
         } 
         return false; 
     } 
   
     private void swap(int fpos, int spos){ 
-        int tmp; 
+        double tmp; 
         tmp = Heap_Array[fpos]; 
         Heap_Array[fpos] = Heap_Array[spos]; 
         Heap_Array[spos] = tmp; 
     } 
   
     private void maxHeapify(int i){ 
+        // This operation is used o accomodate the heap after a deletion
+        // If it's a leaf this operation has no purpose
         if (isLeaf(i)){
             return; 
         }
-
-        if (Heap_Array[i] < Heap_Array[leftChild(i)] || Heap_Array[i] < Heap_Array[rightChild(i)]) { 
-  
+        // If it is, then check:
+        if ((Heap_Array[i] < Heap_Array[leftChild(i)]) || (Heap_Array[i] < Heap_Array[rightChild(i)])) { 
             if (Heap_Array[leftChild(i)] > Heap_Array[rightChild(i)]) { 
                 swap(i, leftChild(i)); 
                 maxHeapify(leftChild(i)); 
@@ -55,7 +57,7 @@ public class ScoreHeap {
         } 
     } 
   
-    public void insert(int new_score){ 
+    public void insert(double new_score){ 
         Heap_Array[++length] = new_score; 
   
         int current =length; 
@@ -66,13 +68,16 @@ public class ScoreHeap {
     } 
 
 
-    public int extractMax() 
-    { 
-        int popped = Heap_Array[1]; 
-        Heap_Array[1] = Heap_Array[length--]; 
-        maxHeapify(1); 
-        return popped; 
+    public double getMax() { 
+        // double popped = Heap_Array[1]; 
+        // Heap_Array[1] = Heap_Array[length--]; 
+        // maxHeapify(1); 
+        return Heap_Array[1]; 
     } 
+
+    public double getMin() {
+        return Heap_Array[Heap_Array.length - 1];
+    }
 } 
 
 
