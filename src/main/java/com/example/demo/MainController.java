@@ -26,6 +26,7 @@ public class MainController {
     @PostMapping("/addNewClass")
     public String addNewClass(@ModelAttribute Class class1) {
         class1.ClassActivities = new AssignmentLinkedList();
+        class1.findTotal();
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }
@@ -49,7 +50,6 @@ public class MainController {
 
     @RequestMapping(value="/classInformation", method=RequestMethod.GET)
     public String classInformation(Model model) {
-//        saved_class.ClassActivities.listNodes();
         model.addAttribute("assignments", saved_class.ClassActivities.toArray());
         model.addAttribute("stored_assignment", new Assignment());
         return "classInformation";
@@ -64,6 +64,8 @@ public class MainController {
     @PostMapping("/addNewAssignment")
     public String addNewAssignment(@ModelAttribute Assignment assignment1) {
         saved_class.ClassActivities.add(assignment1);
+        saved_class.findaverages();
+        saved_class.findScore();
         return "redirect:/classInformation";
     }
 
@@ -75,5 +77,14 @@ public class MainController {
         return "redirect:/classInformation";
     }
 
+//    ------------------------------------------- Grade Manager -----------------------------------------
+
+    @RequestMapping(value="/gradeManager", method=RequestMethod.GET)
+    public String gradeManager(Model model) {
+//        model.addAttribute("average", GradeManager.findAverage());
+//        model.addAttribute("weighted_average", GradeManager.findWeightedAverage());
+//        model.addAttribute("stored_assignment", new Assignment());
+        return "gradesDash";
+    }
 
 }
