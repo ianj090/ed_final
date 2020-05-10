@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+
 @Controller
 public class MainController {
 //    Dash == Dashboard osea la pagina principal de html
@@ -27,6 +29,7 @@ public class MainController {
     public String addNewClass(@ModelAttribute Class class1) {
         class1.ClassActivities = new AssignmentLinkedList();
         class1.findTotal();
+        class1.findScoreWanted();
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }
@@ -81,16 +84,24 @@ public class MainController {
 
     @RequestMapping(value="/gradeManager", method=RequestMethod.GET)
     public String gradeManager(Model model) {
-        ScoreHeap obj2 = new ScoreHeap(100);
-        obj2.insert(99);
-        obj2.insert(1090);
-        obj2.insert(0);
+        int amount_classes = 0;
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            if (CoursesLinkedList.coursesArray[i] != null) {
+                amount_classes++;
+            }
+        }
+        new ScoreHeap(amount_classes);
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            if (CoursesLinkedList.coursesArray[i] != null) {
+                ScoreHeap.insert(CoursesLinkedList.coursesArray[i].Score);
+            }
+        }
+
         model.addAttribute("max_val", ScoreHeap.getMax());
         model.addAttribute("min_val", ScoreHeap.getMin());
-//        model.addAttribute("average", ScoreHeap.findAverage());
-//        model.addAttribute("weighted_average", GradeManager.findWeightedAverage());
-//        model.addAttribute("stored_assignment", new Assignment());
+        model.addAttribute("average", ScoreHeap.getAverage());
+        model.addAttribute("weighted_average", ScoreHeap.getWeighted());
+        model.addAttribute("classes", CoursesLinkedList.toArray());
         return "gradesDash";
     }
-
 }

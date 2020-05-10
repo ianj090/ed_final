@@ -37,7 +37,7 @@ public class CoursesLinkedList {
 
     private static Node root;
     private static int size;
-    private static Class[] coursesArray = new Class[5];
+    public static Class[] coursesArray = new Class[5];
 
     public CoursesLinkedList() {
         root = new Node();
