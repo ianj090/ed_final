@@ -314,32 +314,50 @@
                     </div>
                     <div class="card-body">
                         <div class="typo-headers">
-                            <h1 th:text="'Zona: ' + ${max_val}" />
-                            <h1 th:text="'Zona: ' + ${min_val}" />
-                            <h1 th:text="'Zona: ' + ${average}" />
-                            <h1 th:text="'Zona: ' + ${weighted_average}" />
-                            <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
-                            <h3 class="pb-2 display-5">Articles & Block Headings H3</h3>
-                            <h4 class="pb-2 display-5">Random Tiny Heading H4</h4>
-                            <h5 class="pb-2 display-5">Random Tiny Heading H5</h5>
-                            <h6 class="pb-4 display-5">Random Tiny Heading H6</h6>
+                            <h1 align="center" th:text="'Promedio ponderado: ' + ${weighted_average}" />
+                            <mark><h2 align="center" th:text="'Promedio general: ' + ${average}" /></mark>
+                            <h3 align="center" th:text="'Nota Maxima: ' + ${max_val}" />
+                            <h3 align="center" th:text="'Nota minima: ' + ${min_val}" />
+
                         </div>
                     </div>
                 </div>
+            </div>
 
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                <div th:each="course : ${classes}" th:if="${course} != null">
+                        <div class="au-card m-b-30">
+                            <div class="au-card-inner">
+                                <h2 th:text="${course.ClassName}" />
 
-                <div class="container-fluid" th:each="course : ${classes}" th:if="${course} != null">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item" width="300px">
-                                <h2 class="number" th:text="${course.ClassName}" />
-                                <h1 th:text="'Zona: ' + ${course.Score} + '/' + ${course.Total}" />
-                                <h2 class="number" th:text="'Grade Wanted: ' + ${course.ScoreWanted}" />
-                                <h2 class="number" th:text="'Score Needed on Final: ' + ${course.FinalScoreNeeded}" />
+                                <p th:text="'Zona: ' + ${course.Score} + '/' + ${course.Total}" />
+                                <p th:text="'Grade Wanted: ' + ${course.ScoreWanted}" />
+                                <mark><p th:text="'Score Needed on Final: ' + ${course.FinalScoreNeeded} + '%'" /></mark>
+                                </p>
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
+
+                </div>
+
+
+
+<!--                <div class="container-fluid" th:each="course : ${classes}" th:if="${course} != null">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-6 col-lg-3">-->
+<!--                            <div class="statistic__item" width="300px">-->
+<!--                                <h2 class="number" th:text="${course.ClassName}" />-->
+<!--                                <h1 th:text="'Zona: ' + ${course.Score} + '/' + ${course.Total}" />-->
+<!--                                <h2 class="number" th:text="'Grade Wanted: ' + ${course.ScoreWanted}" />-->
+<!--                                <h2 class="number" th:text="'Score Needed on Final: ' + ${course.FinalScoreNeeded} + '%'" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
 
                 <div class="container-fluid">
