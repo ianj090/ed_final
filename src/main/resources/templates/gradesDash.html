@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/scheduleDash">
+                        <a href="/schedule">
                             <i class="fas fa-calendar-alt"></i>Schedule</a>
 
                     </li>
@@ -326,12 +326,10 @@
 
                 <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6">
-                <div th:each="course : ${classes}" th:if="${course} != null">
+                <div class="col-lg-6" th:each="course : ${classes}" th:if="${course} != null">
                         <div class="au-card m-b-30">
                             <div class="au-card-inner">
                                 <h2 th:text="${course.ClassName}" />
-
                                 <p th:text="'Zona: ' + ${course.Score} + '/' + ${course.Total}" />
                                 <p th:text="'Grade Wanted: ' + ${course.ScoreWanted}" />
                                 <mark><p th:text="'Score Needed on Final: ' + ${course.FinalScoreNeeded} + '%'" /></mark>
@@ -339,7 +337,7 @@
                             </div>
                         </div>
                     </div>
-                    </div>
+
                 </div>
 
                 </div>
