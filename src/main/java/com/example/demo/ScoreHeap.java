@@ -66,7 +66,6 @@ public class ScoreHeap {
         } 
     } 
 
-
     public static double getMax() {
         // double popped = Heap_Array[1]; 
         // Heap_Array[1] = Heap_Array[length--]; 
@@ -77,6 +76,15 @@ public class ScoreHeap {
     public static double getMin() {
         return Heap_Array[Heap_Array.length - 1];
     }
+
+    public static void incrSize() {
+        double[] Copy_Heap_Array = new double[Heap_Array.length + 5];
+        for (int i = 0; i < Heap_Array.length; i++) {
+            Copy_Heap_Array[i] = Heap_Array[i];
+        }
+        Heap_Array = Copy_Heap_Array;
+    }
+    
 } 
 
 
