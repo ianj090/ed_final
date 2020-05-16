@@ -322,13 +322,13 @@ section {
 }
 
 .main-content {
-    padding-top: 50px;
+    padding-top: 100px;
     min-height: 100vh;
 }
 
 @media (max-width: 991px) {
     .main-content {
-        padding-top: 50px;
+        padding-top: 100px;
 	padding-bottom: 100px;
     }
 }
@@ -3226,7 +3226,7 @@ section {
     -moz-border-radius: 10px;
     border-radius: 10px;
     background: #fff;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .au-card--border {

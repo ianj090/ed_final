@@ -104,4 +104,11 @@ public class MainController {
         model.addAttribute("classes", CoursesLinkedList.toArray());
         return "gradesDash";
     }
+
+//    ------------------------------------------- Schedule -----------------------------------------
+
+    @RequestMapping(value="/schedule", method=RequestMethod.GET)
+    public String Schedule(Model model) {
+        return "scheduleDash";
+    }
 }
