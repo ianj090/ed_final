@@ -26,6 +26,8 @@ class FinalApplicationTests {
         course1.Final = 20.0f;
         course1.ScoreWanted = 80.0f;
         course1.Credits = 3.0f;
+        course1.Period = 3;
+        course1.WeekDay = "tuesday";
         course1.findTotal();
         course1.findScoreWanted();
         course1.ClassActivities = new AssignmentLinkedList();
@@ -35,6 +37,8 @@ class FinalApplicationTests {
         course2.Quiz = 70.0f;
         course2.Final = 30.0f;
         course2.ScoreWanted = 100.0f;
+        course2.Period = 5;
+        course2.WeekDay = "friday";
         course2.ClassActivities = new AssignmentLinkedList();
         CoursesLinkedList.add(course2);
         Class course3 = new Class();
@@ -100,6 +104,27 @@ class FinalApplicationTests {
         assertEquals(0.0, ScoreHeap.getMin());
         assertEquals(40.0, ScoreHeap.getAverage());
         assertEquals(40.0, ScoreHeap.getWeighted());
+
+//      -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        ScheduleBTree.BinaryTree.clear();
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            ScheduleBTree.BinaryTree.add(CoursesLinkedList.coursesArray[i]);
+        }
+
+        ScheduleBTree.BinaryTree.traverse(ScheduleBTree.BinaryTree.root);
+
+//        assertEquals([], ScheduleBTree.BinaryTree.tuesday);
+
+        assertEquals("Test Class 1", ScheduleBTree.BinaryTree.tuesday[course1.Period - 1].Class_Name);
+        assertEquals("tuesday", ScheduleBTree.BinaryTree.tuesday[course1.Period - 1].Week_Day);
+        assertEquals(3, ScheduleBTree.BinaryTree.tuesday[course1.Period - 1].Period);
+        assertEquals("Test Class 2", ScheduleBTree.BinaryTree.friday[course2.Period - 1].Class_Name);
+        assertEquals("friday", ScheduleBTree.BinaryTree.friday[course2.Period - 1].Week_Day);
+        assertEquals(5, ScheduleBTree.BinaryTree.friday[course2.Period - 1].Period);
+
+
+
 
     }
 }
