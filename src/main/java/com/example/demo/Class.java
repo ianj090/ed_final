@@ -9,6 +9,9 @@ public class Class {
     float Credits;
     String Descripcion;
     float Score = 0.0f;
+    float ScoreWithoutFinal;
+    float ScoreWanted = 0.0f;
+    float FinalScoreNeeded;
     float Total;
     float HomeWork;
     float ClassWork;
@@ -128,6 +131,22 @@ public class Class {
         return this.Total;
     }
 
+    public void setScoreWanted(Float ScoreWanted) {
+        this.ScoreWanted = ScoreWanted;
+    }
+
+    public float getScoreWanted() {
+        return this.ScoreWanted;
+    }
+
+    public void setFinalScoreNeeded(Float FinalScoreNeeded) {
+        this.FinalScoreNeeded = FinalScoreNeeded;
+    }
+
+    public float getFinalScoreNeeded() {
+        return this.FinalScoreNeeded;
+    }
+
 // --------------------------------------------------------------------------------------------
 
     public void findTotal() {
@@ -140,7 +159,6 @@ public class Class {
             if (assignment != null) {
                 switch (assignment.TypeOfActivity) {
                     case "homework":
-                        System.out.println("yeah");
                         sizeHomeWork++;
                         amountHomeWork += assignment.ScoreOfThisActivity;
                         break;
@@ -184,5 +202,13 @@ public class Class {
         if (Total != 0.0f) {
             Score = (avgHomeWork * (HomeWork/Total)) + (avgClassWork * (ClassWork/Total)) + (avgQuiz * (Quiz/Total)) + (avgTest * (Test/Total)) + (avgFinal * (Final/Total));
         }
+    }
+
+    public void findScoreWanted() {
+        if (Total != 0.0f) {
+            ScoreWithoutFinal = Score - (avgFinal * (Final / Total));
+        }
+        FinalScoreNeeded = ScoreWanted - ScoreWithoutFinal;
+        FinalScoreNeeded = FinalScoreNeeded * (Total/Final);
     }
 }

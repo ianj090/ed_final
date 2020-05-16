@@ -1,20 +1,27 @@
 package com.example.demo;
 
+import java.util.Arrays;
+
 /* Max heap para trabajar los grades */
 /* No admite números negativos */
 public class ScoreHeap { 
-    int cantidad_de_notas; 
-    int length; 
+    static int cantidad_de_notas;
+    static int length;
     static double[] Heap_Array;
+    static float average = 0.0f;
+    static float weightedAverage = 0.0f;
   
     ScoreHeap(int cantidad_de_notas){ 
-        this.cantidad_de_notas = cantidad_de_notas;
-        this.length = 0; 
-        Heap_Array = new double[cantidad_de_notas + 1];
-        Heap_Array[0] = Integer.MAX_VALUE;
+        ScoreHeap.cantidad_de_notas = cantidad_de_notas;
+        if (cantidad_de_notas == 0) {
+            Heap_Array = new double[cantidad_de_notas + 1];
+        }
+        else {
+            Heap_Array = new double[cantidad_de_notas];
+        }
     }
   
-    private int parent(int i){ 
+    private static int parent(int i){
         return (i / 2); 
     } 
   
@@ -30,7 +37,7 @@ public class ScoreHeap {
         return (i >= (length / 2)) && (i <= length);
     } 
   
-    private void swap(int fpos, int spos){ 
+    private static void swap(int fpos, int spos){
         double tmp; 
         tmp = Heap_Array[fpos]; 
         Heap_Array[fpos] = Heap_Array[spos]; 
@@ -56,27 +63,32 @@ public class ScoreHeap {
         } 
     } 
   
-    public void insert(double new_score){ 
-        Heap_Array[++length] = new_score; 
+    public static void insert(double new_score){
+        Heap_Array[Heap_Array.length-1] = new_score;
   
-        int current =length; 
+        int current =Heap_Array.length-1;
         while (Heap_Array[current] > Heap_Array[parent(current)]) { 
             swap(current, parent(current)); 
             current = parent(current); 
         } 
+<<<<<<< HEAD
     } 
+=======
+    }
+>>>>>>> 6ec5aecd920244924456793968b1eb870d33264f
 
     public static double getMax() {
         // double popped = Heap_Array[1]; 
         // Heap_Array[1] = Heap_Array[length--]; 
-        // maxHeapify(1); 
-        return Heap_Array[1]; 
-    } 
+        // maxHeapify(1);
+        return Heap_Array[0];
+    }
 
     public static double getMin() {
         return Heap_Array[Heap_Array.length - 1];
     }
 
+<<<<<<< HEAD
     public static void incrSize() {
         double[] Copy_Heap_Array = new double[Heap_Array.length + 5];
         for (int i = 0; i < Heap_Array.length; i++) {
@@ -85,6 +97,37 @@ public class ScoreHeap {
         Heap_Array = Copy_Heap_Array;
     }
     
+=======
+    public static float getAverage() {
+        float sumScores = 0.0f;
+        int size = 0;
+        for (int i=0; i<Heap_Array.length; i++) {
+            sumScores = (float) (sumScores + Heap_Array[i]);
+            if (Heap_Array[i] != 0.0f) {
+                size++;
+            }
+        }
+        if (size != 0) {
+            average = sumScores / size;
+        }
+        return average;
+    }
+
+    public static float getWeighted() {
+        float totalUmas = 0.0f;
+        float totalWixi = 0.0f;
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            if (CoursesLinkedList.coursesArray[i] != null) {
+                totalUmas = totalUmas + CoursesLinkedList.coursesArray[i].Credits;
+                totalWixi = totalWixi + (CoursesLinkedList.coursesArray[i].Score * CoursesLinkedList.coursesArray[i].Credits);
+            }
+        }
+        if (totalUmas != 0.0f) {
+            weightedAverage = totalWixi / totalUmas;
+        }
+        return weightedAverage;
+    }
+>>>>>>> 6ec5aecd920244924456793968b1eb870d33264f
 } 
 
 
