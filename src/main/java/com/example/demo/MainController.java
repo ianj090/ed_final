@@ -30,6 +30,11 @@ public class MainController {
         class1.ClassActivities = new AssignmentLinkedList();
         class1.findTotal();
         class1.findScoreWanted();
+        class1.findTime();
+        System.out.println(class1.ClassName);
+        System.out.println(class1.WeekDay);
+        System.out.println(class1.StartTime);
+        System.out.println(class1.Time);
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }
@@ -104,4 +109,24 @@ public class MainController {
         model.addAttribute("classes", CoursesLinkedList.toArray());
         return "gradesDash";
     }
+
+    @RequestMapping(value="/schedule", method=RequestMethod.GET)
+    public String Schedule(Model model) {
+
+        ScheduleBTree.BinaryTree.clear();
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            ScheduleBTree.BinaryTree.add(CoursesLinkedList.coursesArray[i]);
+        }
+
+        ScheduleBTree.BinaryTree.traverse(ScheduleBTree.BinaryTree.root);
+
+        model.addAttribute("monday_courses", ScheduleBTree.BinaryTree.monday);
+        model.addAttribute("tuesday_courses", ScheduleBTree.BinaryTree.tuesday);
+        model.addAttribute("wednesday_courses", ScheduleBTree.BinaryTree.wednesday);
+        model.addAttribute("thursday_courses", ScheduleBTree.BinaryTree.thursday);
+        model.addAttribute("friday_courses", ScheduleBTree.BinaryTree.friday);
+
+        return "scheduleDash";
+    }
+
 }

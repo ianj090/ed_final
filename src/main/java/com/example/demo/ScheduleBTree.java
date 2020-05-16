@@ -78,6 +78,8 @@ public class ScheduleBTree {
                 for (int i=0; i<tuesday.length; i++) {
                     if (tuesday[i] == null) {
                         tuesday[i] = node;
+                        System.out.println(tuesday[i].Class_Name);
+                        System.out.println(tuesday[i].Period);
                         break;
                     }
                 }

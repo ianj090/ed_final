@@ -8,6 +8,9 @@ public class Class {
     String TA;
     float Credits;
     String Descripcion;
+    float StartTime;
+    String WeekDay;
+    float Time;
     float Score = 0.0f;
     float ScoreWithoutFinal;
     float ScoreWanted = 0.0f;
@@ -73,6 +76,22 @@ public class Class {
 
     public String getDescripcion() {
         return this.Descripcion;
+    }
+
+    public float getStartTime() {
+        return this.StartTime;
+    }
+
+    public void setStartTime(Float StartTime) {
+        this.StartTime = StartTime;
+    }
+
+    public String getWeekDay() {
+        return this.WeekDay;
+    }
+
+    public void setWeekDay(String WeekDay) {
+        this.WeekDay = WeekDay;
     }
 
     public void setHomeWork(Float Homework) {
@@ -210,5 +229,25 @@ public class Class {
         }
         FinalScoreNeeded = ScoreWanted - ScoreWithoutFinal;
         FinalScoreNeeded = FinalScoreNeeded * (Total/Final);
+    }
+
+    public void findTime() {
+        switch (WeekDay) {
+            case "monday":
+                Time = 0 + (StartTime * 0.0001f);
+                break;
+            case "tuesday":
+                Time = 1 + (StartTime * 0.0001f);
+                break;
+            case "wednesday":
+                Time = 2 + (StartTime * 0.0001f);
+                break;
+            case "thursday":
+                Time = 3 + (StartTime * 0.0001f);
+                break;
+            case "friday":
+                Time = 4 + (StartTime * 0.0001f);
+                break;
+        }
     }
 }

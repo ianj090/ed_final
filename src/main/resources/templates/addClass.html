@@ -310,7 +310,17 @@
             <p>Teacher:</p> <p><input class="au-input au-input--w435" type="text" th:field="*{Teacher}" required/></p>
             <p>Teacher's Assistant: </p> <p><input class="au-input au-input--w435" type="text" th:field="*{TA}" required/></p>
             <p>Amount of UMAs:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Credits}" required/></p>
-
+            <p>WeekDay: </p>
+            <p>
+                <select id="weekDay" name="weekDay" th:field="*{WeekDay}" required>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                </select>
+            </p>
+            <p>Start Time:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{StartTime}" required/></p>
             <p>Homework Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{HomeWork}" required/></p>
             <p>Classwork Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{ClassWork}" required/></p>
             <p>Quiz Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Quiz}" required/></p>
