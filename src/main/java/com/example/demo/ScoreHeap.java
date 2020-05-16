@@ -71,7 +71,11 @@ public class ScoreHeap {
             swap(current, parent(current)); 
             current = parent(current); 
         } 
+<<<<<<< HEAD
+    } 
+=======
     }
+>>>>>>> 6ec5aecd920244924456793968b1eb870d33264f
 
     public static double getMax() {
         // double popped = Heap_Array[1]; 
@@ -84,6 +88,16 @@ public class ScoreHeap {
         return Heap_Array[Heap_Array.length - 1];
     }
 
+<<<<<<< HEAD
+    public static void incrSize() {
+        double[] Copy_Heap_Array = new double[Heap_Array.length + 5];
+        for (int i = 0; i < Heap_Array.length; i++) {
+            Copy_Heap_Array[i] = Heap_Array[i];
+        }
+        Heap_Array = Copy_Heap_Array;
+    }
+    
+=======
     public static float getAverage() {
         float sumScores = 0.0f;
         int size = 0;
@@ -113,6 +127,7 @@ public class ScoreHeap {
         }
         return weightedAverage;
     }
+>>>>>>> 6ec5aecd920244924456793968b1eb870d33264f
 } 
 
 
