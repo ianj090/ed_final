@@ -31,10 +31,6 @@ public class MainController {
         class1.findTotal();
         class1.findScoreWanted();
         class1.findTime();
-        System.out.println(class1.ClassName);
-        System.out.println(class1.WeekDay);
-        System.out.println(class1.StartTime);
-        System.out.println(class1.Time);
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }
@@ -110,7 +106,6 @@ public class MainController {
         return "gradesDash";
     }
 
-<<<<<<< HEAD
     @RequestMapping(value="/schedule", method=RequestMethod.GET)
     public String Schedule(Model model) {
 
@@ -131,12 +126,3 @@ public class MainController {
     }
 
 }
-=======
-//    ------------------------------------------- Schedule -----------------------------------------
-
-    @RequestMapping(value="/schedule", method=RequestMethod.GET)
-    public String Schedule(Model model) {
-        return "scheduleDash";
-    }
-}
->>>>>>> 258ea52df9c2d0e26bae4eb3220072fc49acbc63
