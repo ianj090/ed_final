@@ -30,7 +30,7 @@ public class MainController {
         class1.ClassActivities = new AssignmentLinkedList();
         class1.findTotal();
         class1.findScoreWanted();
-        class1.findTime();
+//        class1.findTime();
         CoursesLinkedList.add(class1);
         return "redirect:/";
     }

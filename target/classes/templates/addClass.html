@@ -320,7 +320,16 @@
                     <option value="friday">Friday</option>
                 </select>
             </p>
-            <p>Start Time:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{StartTime}" required/></p>
+            <p>Class Period: </p>
+            <p>
+                <select id="period" name="period" th:field="*{Period}" required>
+                    <option value="1">First</option>
+                    <option value="2">Second</option>
+                    <option value="3">Third</option>
+                    <option value="4">Fourth</option>
+                    <option value="5">Fifth</option>
+                </select>
+            </p>
             <p>Homework Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{HomeWork}" required/></p>
             <p>Classwork Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{ClassWork}" required/></p>
             <p>Quiz Percentage:</p> <p><input class="au-input au-input--w300" type="text" th:field="*{Quiz}" required/></p>

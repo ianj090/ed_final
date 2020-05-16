@@ -4,24 +4,26 @@ import java.util.Arrays;
 
 public class ScheduleBTree {
     static class Node {
-        float Period;
+        int Period;
         String Class_Name;
+        String Week_Day;
         Node left, right;
 
-        Node(float info, String CN) {
+        Node(int info, String CN, String WD) {
             Period = info;
             Class_Name = CN;
+            Week_Day = WD;
             left = right = null;
         }
     }
 
     static class BinaryTree{
         public static Node root;
-        public static Node[] monday = new Node[CoursesLinkedList.coursesArray.length];
-        public static Node[] tuesday = new Node[CoursesLinkedList.coursesArray.length];
-        public static Node[] wednesday = new Node[CoursesLinkedList.coursesArray.length];
-        public static Node[] thursday = new Node[CoursesLinkedList.coursesArray.length];
-        public static Node[] friday = new Node[CoursesLinkedList.coursesArray.length];
+        public static Node[] monday = new Node[5];
+        public static Node[] tuesday = new Node[5];
+        public static Node[] wednesday = new Node[5];
+        public static Node[] thursday = new Node[5];
+        public static Node[] friday = new Node[5];
 
 
         public static void add(Class course) {
@@ -31,12 +33,12 @@ public class ScheduleBTree {
         public static Node addRecursive(Node current, Class course) {
             if (course != null) {
                 if (current == null) {
-                    return new Node(course.Time, course.ClassName);
+                    return new Node(course.Period, course.ClassName, course.WeekDay);
                 }
 
-                if (course.Time < current.Period) {
+                if (course.Period < current.Period) {
                     current.left = addRecursive(current.left, course);
-                } else if (course.Time > current.Period) {
+                } else if (course.Period > current.Period) {
                     current.right = addRecursive(current.right, course);
                 } else {
                     return current;
@@ -63,72 +65,26 @@ public class ScheduleBTree {
         }
 
         public static void toArray(Node node) {
-            if (monday.length < CoursesLinkedList.coursesArray.length) {
-                incrArraySize();
+            switch (node.Week_Day) {
+                case "monday":
+                    monday[node.Period - 1] = node;
+                    System.out.println(Arrays.toString(monday));
+                    System.out.println(monday[node.Period - 1]);
+                    System.out.println(monday[node.Period - 1].Class_Name);
+                    break;
+                case "tuesday":
+                    tuesday[node.Period - 1] = node;
+                    break;
+                case "wednesday":
+                    wednesday[node.Period - 1] = node;
+                    break;
+                case "thursday":
+                    thursday[node.Period - 1] = node;
+                    break;
+                case "friday":
+                    friday[node.Period - 1] = node;
+                    break;
             }
-            if (node.Period < 1) {
-                for (int i=0; i<monday.length; i++) {
-                    if (monday[i] == null) {
-                        monday[i] = node;
-                        break;
-                    }
-                }
-            }
-            else if (node.Period < 2) {
-                for (int i=0; i<tuesday.length; i++) {
-                    if (tuesday[i] == null) {
-                        tuesday[i] = node;
-                        break;
-                    }
-                }
-            }
-            else if (node.Period < 3) {
-                for (int i=0; i<wednesday.length; i++) {
-                    if (wednesday[i] == null) {
-                        wednesday[i] = node;
-                        break;
-                    }
-                }
-            }
-            else if (node.Period < 4) {
-                for (int i=0; i<thursday.length; i++) {
-                    if (thursday[i] == null) {
-                        thursday[i] = node;
-                        break;
-                    }
-                }
-            }
-            else if (node.Period < 5) {
-                for (int i=0; i<friday.length; i++) {
-                    if (friday[i] == null) {
-                        friday[i] = node;
-                        break;
-                    }
-                }
-            }
-        }
-
-        public static void incrArraySize() {
-            int size = monday.length + 5;
-            Node[] copy_array = new Node[size];
-            System.arraycopy(monday, 0, copy_array, 0, monday.length);
-            monday = copy_array;
-
-            copy_array = new Node[size];
-            System.arraycopy(tuesday, 0, copy_array, 0, tuesday.length);
-            tuesday = copy_array;
-
-            copy_array = new Node[size];
-            System.arraycopy(wednesday, 0, copy_array, 0, wednesday.length);
-            wednesday = copy_array;
-
-            copy_array = new Node[size];
-            System.arraycopy(thursday, 0, copy_array, 0, thursday.length);
-            thursday = copy_array;
-
-            copy_array = new Node[size];
-            System.arraycopy(friday, 0, copy_array, 0, friday.length);
-            friday = copy_array;
         }
     }
 }
