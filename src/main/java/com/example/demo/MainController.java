@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 @Controller
@@ -14,6 +15,7 @@ public class MainController {
     
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String fullDash(Model model) {
+//        ReadBinaryFile.ReadFile();
         model.addAttribute("classes", CoursesLinkedList.toArray());
         model.addAttribute("stored_class", new Class());
         return "resultDash";
@@ -26,11 +28,12 @@ public class MainController {
     }
 
     @PostMapping("/addNewClass")
-    public String addNewClass(@ModelAttribute Class class1) {
+    public String addNewClass(@ModelAttribute Class class1) throws IOException {
         class1.ClassActivities = new AssignmentLinkedList();
         class1.findTotal();
         class1.findScoreWanted();
         CoursesLinkedList.add(class1);
+        WriteBinaryFile.WriteFile("classes", class1);
         return "redirect:/";
     }
 

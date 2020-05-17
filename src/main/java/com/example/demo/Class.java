@@ -42,128 +42,400 @@ public class Class {
 // --------------------------------------------------------------------------------------------
 
     public String getClassName() {
-        return this.ClassName;
+        return ClassName;
     }
 
-    public AssignmentLinkedList getClassActivities() {
-        return this.ClassActivities;
-    }
-
-    public void setClassName(String ClassName) {
-        this.ClassName = ClassName;
+    public void setClassName(String className) {
+        ClassName = className;
     }
 
     public String getTeacher() {
-        return this.Teacher;
+        return Teacher;
     }
 
-    public void setTeacher(String Teacher) {
-        this.Teacher = Teacher;
-    }
-
-    public void setCredits(Float Credits) {
-        this.Credits = Credits;
+    public void setTeacher(String teacher) {
+        Teacher = teacher;
     }
 
     public String getTA() {
-        return this.TA;
+        return TA;
+    }
+
+    public void setTA(String TA) {
+        this.TA = TA;
     }
 
     public float getCredits() {
-        return this.Credits;
+        return Credits;
+    }
+
+    public void setCredits(float credits) {
+        Credits = credits;
     }
 
     public String getDescripcion() {
-        return this.Descripcion;
+        return Descripcion;
     }
 
-    public int getPeriod() {
-        return this.Period;
-    }
-
-    public void setPeriod(int Period) {
-        this.Period = Period;
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
     public String getWeekDay() {
-        return this.WeekDay;
+        return WeekDay;
     }
 
-    public void setWeekDay(String WeekDay) {
-        this.WeekDay = WeekDay;
+    public void setWeekDay(String weekDay) {
+        WeekDay = weekDay;
     }
 
-    public void setHomeWork(Float Homework) {
-        this.HomeWork = Homework;
+    public int getPeriod() {
+        return Period;
     }
 
-    public float getHomeWork() {
-        return this.HomeWork;
-    }
-
-    public void setClassWork(Float ClassWork) {
-        this.ClassWork = ClassWork;
-    }
-
-    public float getClassWork() {
-        return this.ClassWork;
-    }
-
-    public void setQuiz(Float Quiz) {
-        this.Quiz = Quiz;
-    }
-
-    public float getQuiz() {
-        return this.Quiz;
-    }
-
-    public void setTest(Float Test) {
-        this.Test = Test;
-    }
-
-    public float getTest() {
-        return this.Test;
-    }
-
-    public void setFinal(Float Final) {
-        this.Final = Final;
-    }
-
-    public float getFinal() {
-        return this.Final;
-    }
-
-    public void setScore(Float Score) {
-        this.Score = Score;
+    public void setPeriod(int period) {
+        Period = period;
     }
 
     public float getScore() {
-        return this.Score;
+        return Score;
     }
 
-    public void setTotal(Float Total) {
-        this.Total = Total;
+    public void setScore(float score) {
+        Score = score;
     }
 
-    public float getTotal() {
-        return this.Total;
+    public float getScoreWithoutFinal() {
+        return ScoreWithoutFinal;
     }
 
-    public void setScoreWanted(Float ScoreWanted) {
-        this.ScoreWanted = ScoreWanted;
+    public void setScoreWithoutFinal(float scoreWithoutFinal) {
+        ScoreWithoutFinal = scoreWithoutFinal;
     }
 
     public float getScoreWanted() {
-        return this.ScoreWanted;
+        return ScoreWanted;
     }
 
-    public void setFinalScoreNeeded(Float FinalScoreNeeded) {
-        this.FinalScoreNeeded = FinalScoreNeeded;
+    public void setScoreWanted(float scoreWanted) {
+        ScoreWanted = scoreWanted;
     }
 
     public float getFinalScoreNeeded() {
-        return this.FinalScoreNeeded;
+        return FinalScoreNeeded;
     }
+
+    public void setFinalScoreNeeded(float finalScoreNeeded) {
+        FinalScoreNeeded = finalScoreNeeded;
+    }
+
+    public float getTotal() {
+        return Total;
+    }
+
+    public void setTotal(float total) {
+        Total = total;
+    }
+
+    public float getHomeWork() {
+        return HomeWork;
+    }
+
+    public void setHomeWork(float homeWork) {
+        HomeWork = homeWork;
+    }
+
+    public float getClassWork() {
+        return ClassWork;
+    }
+
+    public void setClassWork(float classWork) {
+        ClassWork = classWork;
+    }
+
+    public float getQuiz() {
+        return Quiz;
+    }
+
+    public void setQuiz(float quiz) {
+        Quiz = quiz;
+    }
+
+    public float getTest() {
+        return Test;
+    }
+
+    public void setTest(float test) {
+        Test = test;
+    }
+
+    public float getFinal() {
+        return Final;
+    }
+
+    public void setFinal(float aFinal) {
+        Final = aFinal;
+    }
+
+    public AssignmentLinkedList getClassActivities() {
+        return ClassActivities;
+    }
+
+    public void setClassActivities(AssignmentLinkedList classActivities) {
+        ClassActivities = classActivities;
+    }
+
+    public float getAvgHomeWork() {
+        return avgHomeWork;
+    }
+
+    public void setAvgHomeWork(float avgHomeWork) {
+        this.avgHomeWork = avgHomeWork;
+    }
+
+    public int getSizeHomeWork() {
+        return sizeHomeWork;
+    }
+
+    public void setSizeHomeWork(int sizeHomeWork) {
+        this.sizeHomeWork = sizeHomeWork;
+    }
+
+    public float getAmountHomeWork() {
+        return amountHomeWork;
+    }
+
+    public void setAmountHomeWork(float amountHomeWork) {
+        this.amountHomeWork = amountHomeWork;
+    }
+
+    public float getAvgClassWork() {
+        return avgClassWork;
+    }
+
+    public void setAvgClassWork(float avgClassWork) {
+        this.avgClassWork = avgClassWork;
+    }
+
+    public int getSizeClassWork() {
+        return sizeClassWork;
+    }
+
+    public void setSizeClassWork(int sizeClassWork) {
+        this.sizeClassWork = sizeClassWork;
+    }
+
+    public float getAmountClassWork() {
+        return amountClassWork;
+    }
+
+    public void setAmountClassWork(float amountClassWork) {
+        this.amountClassWork = amountClassWork;
+    }
+
+    public float getAvgQuiz() {
+        return avgQuiz;
+    }
+
+    public void setAvgQuiz(float avgQuiz) {
+        this.avgQuiz = avgQuiz;
+    }
+
+    public int getSizeQuiz() {
+        return sizeQuiz;
+    }
+
+    public void setSizeQuiz(int sizeQuiz) {
+        this.sizeQuiz = sizeQuiz;
+    }
+
+    public float getAmountQuiz() {
+        return amountQuiz;
+    }
+
+    public void setAmountQuiz(float amountQuiz) {
+        this.amountQuiz = amountQuiz;
+    }
+
+    public float getAvgTest() {
+        return avgTest;
+    }
+
+    public void setAvgTest(float avgTest) {
+        this.avgTest = avgTest;
+    }
+
+    public int getSizeTest() {
+        return sizeTest;
+    }
+
+    public void setSizeTest(int sizeTest) {
+        this.sizeTest = sizeTest;
+    }
+
+    public float getAmountTest() {
+        return amountTest;
+    }
+
+    public void setAmountTest(float amountTest) {
+        this.amountTest = amountTest;
+    }
+
+    public float getAvgFinal() {
+        return avgFinal;
+    }
+
+    public void setAvgFinal(float avgFinal) {
+        this.avgFinal = avgFinal;
+    }
+
+    public int getSizeFinal() {
+        return sizeFinal;
+    }
+
+    public void setSizeFinal(int sizeFinal) {
+        this.sizeFinal = sizeFinal;
+    }
+
+    public float getAmountFinal() {
+        return amountFinal;
+    }
+
+    public void setAmountFinal(float amountFinal) {
+        this.amountFinal = amountFinal;
+    }
+
+//    public String getClassName() {
+//        return this.ClassName;
+//    }
+//
+//    public AssignmentLinkedList getClassActivities() {
+//        return this.ClassActivities;
+//    }
+//
+//    public void setClassName(String ClassName) {
+//        this.ClassName = ClassName;
+//    }
+//
+//    public String getTeacher() {
+//        return this.Teacher;
+//    }
+//
+//    public void setTeacher(String Teacher) {
+//        this.Teacher = Teacher;
+//    }
+//
+//    public void setCredits(Float Credits) {
+//        this.Credits = Credits;
+//    }
+//
+//    public String getTA() {
+//        return this.TA;
+//    }
+//
+//    public void setTA(String TA) {
+//        this.TA = TA;
+//    }
+//
+//    public float getCredits() {
+//        return this.Credits;
+//    }
+//
+//    public String getDescripcion() {
+//        return this.Descripcion;
+//    }
+//
+//    public void setDescripcion(String Descripcion) {
+//        this.Descripcion = Descripcion;
+//    }
+//
+//    public int getPeriod() {
+//        return this.Period;
+//    }
+//
+//    public void setPeriod(int Period) {
+//        this.Period = Period;
+//    }
+//
+//    public String getWeekDay() {
+//        return this.WeekDay;
+//    }
+//
+//    public void setWeekDay(String WeekDay) {
+//        this.WeekDay = WeekDay;
+//    }
+//
+//    public void setHomeWork(Float Homework) {
+//        this.HomeWork = Homework;
+//    }
+//
+//    public float getHomeWork() {
+//        return this.HomeWork;
+//    }
+//
+//    public void setClassWork(Float ClassWork) {
+//        this.ClassWork = ClassWork;
+//    }
+//
+//    public float getClassWork() {
+//        return this.ClassWork;
+//    }
+//
+//    public void setQuiz(Float Quiz) {
+//        this.Quiz = Quiz;
+//    }
+//
+//    public float getQuiz() {
+//        return this.Quiz;
+//    }
+//
+//    public void setTest(Float Test) {
+//        this.Test = Test;
+//    }
+//
+//    public float getTest() {
+//        return this.Test;
+//    }
+//
+//    public void setFinal(Float Final) {
+//        this.Final = Final;
+//    }
+//
+//    public float getFinal() {
+//        return this.Final;
+//    }
+//
+//    public void setScore(Float Score) {
+//        this.Score = Score;
+//    }
+//
+//    public float getScore() {
+//        return this.Score;
+//    }
+//
+//    public void setTotal(Float Total) {
+//        this.Total = Total;
+//    }
+//
+//    public float getTotal() {
+//        return this.Total;
+//    }
+//
+//    public void setScoreWanted(Float ScoreWanted) {
+//        this.ScoreWanted = ScoreWanted;
+//    }
+//
+//    public float getScoreWanted() {
+//        return this.ScoreWanted;
+//    }
+//
+//    public void setFinalScoreNeeded(Float FinalScoreNeeded) {
+//        this.FinalScoreNeeded = FinalScoreNeeded;
+//    }
+//
+//    public float getFinalScoreNeeded() {
+//        return this.FinalScoreNeeded;
+//    }
 
 // --------------------------------------------------------------------------------------------
 

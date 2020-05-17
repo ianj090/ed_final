@@ -1,10 +1,18 @@
 package com.example.demo;
+import javax.print.DocFlavor;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ReadBinaryFile {
+
+    public String ReadFile(String FileName) {
+        String home = System.getProperty("user.home");
+        File file = new File(home + File.separator + "Documents" + File.separator + "ed_final" + File.separator + "data.bin");
+        return "";
+    }
+
     public static void main(String [] pArgs) throws FileNotFoundException, IOException {
         String home = System.getProperty("user.home");
         File file = new File(home + File.separator + "Documents" + File.separator + "ed_final" + File.separator + "data.bin");
