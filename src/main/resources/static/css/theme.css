@@ -92,6 +92,14 @@ p {
     border-radius: 3px;
 }
 
+.cardschedule {
+    width: 100px;
+    overflow: scroll;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 .btn {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -330,6 +338,12 @@ section {
     .main-content {
         padding-top: 100px;
 	padding-bottom: 100px;
+    }
+
+    .main-content-shedule {
+        padding-top: 90px;
+        overflow: scroll;
+        padding-bottom: 50px;
     }
 }
 
@@ -4186,7 +4200,12 @@ section {
 /* ----- Table ----- */
 .table {
     margin: 0;
+    overflow: scroll;
+    max-width: 100px;
+
+
 }
+
 
 .table-responsive.table--no-card {
     -webkit-border-radius: 10px;
@@ -4219,7 +4238,10 @@ section {
     padding: 12px 40px;
     white-space: nowrap;
 }
-
+.tableview {
+    width: 500px;
+    overflow: scroll;
+}
 .table-earning tbody td.text-right {
     padding-left: 15px;
     padding-right: 65px;
@@ -4594,7 +4616,9 @@ section {
     background: #e5e5e5;
     margin-right: 5px;
 }
-
+.td{
+    width: 100px;
+}
 .table-data-feature .item:last-child {
     margin-right: 0;
 }
