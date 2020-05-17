@@ -6,14 +6,25 @@ public class ScheduleBTree {
     static class Node {
         int Period;
         String Class_Name;
+        String Teacher;
         String Week_Day;
         Node left, right;
 
-        Node(int info, String CN, String WD) {
+        Node(int info, String CN, String WD, String Teach) {
             Period = info;
             Class_Name = CN;
             Week_Day = WD;
+            Teacher=Teach;
             left = right = null;
+        }
+
+
+        public String getClass_Name(){
+            return Class_Name;
+        }
+
+        public String getTeacher(){
+            return Teacher;
         }
     }
 
@@ -33,7 +44,7 @@ public class ScheduleBTree {
         public static Node addRecursive(Node current, Class course) {
             if (course != null) {
                 if (current == null) {
-                    return new Node(course.Period, course.ClassName, course.WeekDay);
+                    return new Node(course.Period, course.ClassName, course.WeekDay,course.Teacher);
                 }
 
                 if (course.Period < current.Period) {
