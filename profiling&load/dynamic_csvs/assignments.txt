@@ -1,0 +1,4 @@
+Tarea10, Homework, 100.0, Complete the worksheet
+Lab4, Labs, 87.5, Complete the lab
+Quiz3, Quiz, 65.0, Complete the quiz
+Parcial2, Parciales, 32.0, Don't cry

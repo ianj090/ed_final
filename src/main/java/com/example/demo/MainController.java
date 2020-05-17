@@ -11,7 +11,7 @@ public class MainController {
 //    Dash == Dashboard osea la pagina principal de html
 
 //    ------------------------------------------- Class Manager -----------------------------------------
-
+    
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String fullDash(Model model) {
         model.addAttribute("classes", CoursesLinkedList.toArray());
