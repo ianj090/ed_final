@@ -7,10 +7,13 @@ import java.io.IOException;
 
 public class ReadBinaryFile {
 
-    public String ReadFile(String FileName) {
-        String home = System.getProperty("user.home");
-        File file = new File(home + File.separator + "Documents" + File.separator + "ed_final" + File.separator + "data.bin");
-        return "";
+    public static String ReadFile(String filename) {
+        File file = new File(filename + ".bin");
+        String result = "";
+        for (int i=0; i<file.length(); i++) {
+            result = result + i; //Just checking return
+        }
+        return result;
     }
 
     public static void main(String [] pArgs) throws FileNotFoundException, IOException {
