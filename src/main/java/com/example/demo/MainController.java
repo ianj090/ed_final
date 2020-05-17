@@ -12,11 +12,24 @@ public class MainController {
 //    Dash == Dashboard osea la pagina principal de html
 
 //    ------------------------------------------- Class Manager -----------------------------------------
-    
+
+    int readFileFlag = 0;
+
     @RequestMapping(value="/", method=RequestMethod.GET)
-    public String fullDash(Model model) {
-//        ReadBinaryFile.ReadFile();
+    public String fullDash(Model model) throws IOException {
+        if (readFileFlag == 0) {
+            ReadBinaryFile.ReadFile("classes");
+            ReadBinaryFile.ReadFile("assignments");
+            readFileFlag = 1;
+        }
+//        System.out.println(ReadBinaryFile.ReadFile("classes"));
         model.addAttribute("classes", CoursesLinkedList.toArray());
+        WriteBinaryFile.ClearFile("classes");
+        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            if (CoursesLinkedList.coursesArray[i] != null) {
+                WriteBinaryFile.WriteClassFile(CoursesLinkedList.coursesArray[i]);
+            }
+        }
         model.addAttribute("stored_class", new Class());
         return "resultDash";
     }
@@ -28,12 +41,11 @@ public class MainController {
     }
 
     @PostMapping("/addNewClass")
-    public String addNewClass(@ModelAttribute Class class1) throws IOException {
+    public String addNewClass(@ModelAttribute Class class1) {
         class1.ClassActivities = new AssignmentLinkedList();
         class1.findTotal();
         class1.findScoreWanted();
         CoursesLinkedList.add(class1);
-        WriteBinaryFile.WriteFile("classes", class1);
         return "redirect:/";
     }
 
@@ -55,8 +67,15 @@ public class MainController {
     }
 
     @RequestMapping(value="/classInformation", method=RequestMethod.GET)
-    public String classInformation(Model model) {
+    public String classInformation(Model model) throws IOException {
+//        ReadBinaryFile.ReadFile("assignments");
         model.addAttribute("assignments", saved_class.ClassActivities.toArray());
+        WriteBinaryFile.ClearFile("assignments");
+        for (int i=0; i<saved_class.ClassActivities.assignmentArray.length; i++) {
+            if (saved_class.ClassActivities.assignmentArray[i] != null) {
+                WriteBinaryFile.WriteAssignmentFile(saved_class, saved_class.ClassActivities.assignmentArray[i]);
+            }
+        }
         model.addAttribute("stored_assignment", new Assignment());
         return "classInformation";
     }
