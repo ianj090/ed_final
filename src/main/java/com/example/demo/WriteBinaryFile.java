@@ -4,14 +4,8 @@ import java.nio.file.StandardOpenOption;
 
 
 public class WriteBinaryFile {
-<<<<<<< HEAD
-
-    public static void WriteFile(String Filename,Class classtotext) throws IOException {
-        FileOutputStream fos = new FileOutputStream(Filename+".bin",true);
-=======
-    public static void main(String[] args, String file) throws java.io.IOException {
-        FileOutputStream fos = new FileOutputStream(file + "classes.bin");
->>>>>>> 3fc03ce036748b4bf403598b2f4787dd3b3bc23d
+        public static void WriteFile(String Filename,Class classtotext) throws IOException {
+        FileOutputStream fos = new FileOutputStream(Filename + "classes.bin");
         OutputStreamWriter osw = new OutputStreamWriter(fos);
         BufferedWriter out = new BufferedWriter(osw); /*new BufferedWriter(osw,true);*/
         out.write("//" + classtotext.ClassName + "\n");
