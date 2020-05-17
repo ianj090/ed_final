@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <!-- Required meta tags-->
@@ -323,204 +323,64 @@
         <!-- MAIN CONTENT-->
         <div class="main-content-schedule">
             <H1><FONT COLOR="DARKCYAN"><CENTER>SCHEDULE</FONT></H1>
-            <table border="5" cellspacing="200px" align="center" bgcolor="#f0f8ff">
+            <table border="5" cellspacing="200px" align="center" bgcolor="#f0f8ff" width="100%">
                 <tr border="2">
                     <td align="center" width="80px">
-                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">MONDAY</FONT></h3>
-                    <td align="center" width="150px"><h3><FONT COLOR="#8b0000">TUESDAY</FONT></h3>
-                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">WEDNESDAY</FONT></h3>
-                    <td align="center" width="150px"><h3><FONT COLOR="#8b0000">THURSDAY</FONT></h3>
-                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">FRIDAY</FONT></h3>
+                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">PERIOD 1</FONT></h3>
+                    <td align="center" width="150px"><h3><FONT COLOR="#8b0000">PERIOD 2</FONT></h3>
+                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">PERIOD 3</FONT></h3>
+                    <td align="center" width="150px"><h3><FONT COLOR="#8b0000">PERIOD 4</FONT></h3>
+                    <td align="center" width="150px"><h3><FONT COLOR="#dc143c">PERIOD 5</FONT></h3>
 
                 </tr>
                 <tr>
-                    <td align="center" height="100px"><h4>PERIOD 1</h4>
-                    <td align="center">
-                    <strong><font color="teal"> Card Header</font></strong>
+                    <td align="center" height="100px"><h4>MONDAY</h4>
+                    <td align="center" th:each="mon_val : ${monday_courses}">
+                        <strong><font color="teal" th:text="${mon_val.Class_Name}" th:if="${mon_val} != null">---</font></strong>
                         <br>
-                            <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                            </p>
-                </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
+                        <p><font color="teal" th:text="${mon_val.Teacher}" th:if="${mon_val} != null">---</font>
                         </p>
                     </td>
 
                 </tr>
                 <tr>
-                    <td align="center" height="100px"><h4>PERIOD 2</h4>
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
+                    <td align="center" height="100px"><h4>TUESDAY</h4>
+                    <td align="center" th:each="tues_val : ${tuesday_courses}">
+                        <strong><font color="teal" th:text="${tues_val.Class_Name}" th:if="${tues_val} != null">---</font></strong>
                         <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
+                        <p><font color="teal" th:text="${tues_val.Teacher}" th:if="${tues_val} != null">---</font>
                         </p>
                     </td>
 
                 </tr>
                 <tr>
-                    <td align="center" height="170px"><h4>PERIOD 3</h4>
+                    <td align="center" height="170px"><h4>WEDNESDAY</h4>
 
-                    <<td align="center">
-                    <strong><font color="teal"> Card Header</font></strong>
-                    <br>
-                    <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                    </p>
-                </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
+                    <td align="center" th:each="wed_val : ${wednesday_courses}">
+                        <strong><font color="teal" th:text="${wed_val.Class_Name}" th:if="${wed_val} != null">---</font></strong>
                         <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
+                        <p><font color="teal" th:text="${wed_val.Teacher}" th:if="${wed_val} != null">---</font>
                         </p>
                     </td>
 
                 </tr>
                 <tr>
-                    <td align="center" height="170px"><h4>PERIOD 4</h4>
+                    <td align="center" height="170px"><h4>THURSDAY</h4>
 
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
+                    <td align="center" th:each="thurs_val : ${thursday_courses}">
+                        <strong><font color="teal" th:text="${thurs_val.Class_Name}" th:if="${thurs_val} != null">---</font></strong>
                         <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
+                        <p><font color="teal" th:text="${thurs_val.Teacher}" th:if="${thurs_val} != null">---</font>
                         </p>
                     </td>
 
                 </tr>
                 <tr>
-                    <td align="center" height="170px"><h4>PERIOD 5</h4>
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
+                    <td align="center" height="170px"><h4>FRIDAY</h4>
+                    <td align="center" th:each="fri_val : ${friday_courses}">
+                        <strong><font color="teal" th:text="${fri_val.Class_Name}" th:if="${fri_val} != null">---</font></strong>
                         <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> Card Header</font></strong>
-                        <br>
-                        <p><font color="teal">something idk, i love shawn mendes, goodnight.</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
-                        </p>
-                    </td>
-
-                    <td align="center">
-                        <strong><font color="teal"> --- </font></strong>
-                        <br>
-                        <p><font color="teal">-</font>
+                        <p><font color="teal" th:text="${fri_val.Teacher}" th:if="${fri_val} != null">---</font>
                         </p>
                     </td>
 
