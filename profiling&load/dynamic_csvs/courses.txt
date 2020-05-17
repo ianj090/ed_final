@@ -1,6 +1,6 @@
-Calculo Multivariable,Christiaan Ketelaar,Samuel Rodas,3.5,Aprende calculo de multiples variables
-Estructura de datos,Fernando Boiton,Tortola,3.5,Aprende estructuras de datos
-Global Management and Entreprenurship,Gladys Herrera,Isabel Lewin,3.5,Aprende management
-Cost Analysis,Carolina Melchor,Leonel Velasco,3.5,Aprende costos
-Estadistica 1,Mario Gómez,Carlos Morales,3.5,Aprende estadistica
-Microeconomia,Stefany Bolanos,Shadi Kawaneh,3.5,Aprende Microeconomia
+Calculo Multivariable,Christiaan Ketelaar,Samuel Rodas,3.5,Aprende calculo de multiples variables,monday,5
+Estructura de datos,Fernando Boiton,Tortola,3.5,Aprende estructuras de datos,wednesday,2
+Global Management and Entreprenurship,Gladys Herrera,Isabel Lewin,3.5,Aprende management,thursday,3
+Cost Analysis,Carolina Melchor,Leonel Velasco,3.5,Aprende costos,friday,4
+Estadistica 1,Mario Gómez,Carlos Morales,3.5,Aprende estadistica,tuesday,1
+Microeconomia,Stefany Bolanos,Shadi Kawaneh,3.5,Aprende Microeconomia,monday,3
