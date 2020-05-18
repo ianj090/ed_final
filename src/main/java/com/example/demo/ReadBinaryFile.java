@@ -1,5 +1,7 @@
 package com.example.demo;
 import javax.print.DocFlavor;
+
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,35 +9,131 @@ import java.io.IOException;
 
 public class ReadBinaryFile {
 
-    public static void ReadFile(String filename) throws IOException {
-        File file = new File(filename + ".bin");
+    public static int CalculateArraySize() throws IOException {
+        File file = new File("classes.bin");
         boolean exists = file.exists();
+        int i=0;
 
         if (exists) {
             try (FileInputStream fileInputStream = new FileInputStream(file)) {
                 int singleCharInt;
                 char singleChar;
+                char test = '/';
 
                 while ((singleCharInt = fileInputStream.read()) != -1) {
                     singleChar = (char) singleCharInt;
-                    System.out.print(singleChar);
+                    if (singleChar == test) {
+                        i++;
+                    }
                 }
             }
         }
+        return i;
     }
 
-//    public static void main(String [] pArgs) throws FileNotFoundException, IOException {
-//        String home = System.getProperty("user.home");
-//        File file = new File(home + File.separator + "Documents" + File.separator + "ed_final" + File.separator + "data.bin");
-////        File file = new File("/Users/anesveth/Documents/ed_final/data.bin");
-//        try (FileInputStream fileInputStream = new FileInputStream(file)) {
-//            int singleCharInt;
-//            char singleChar;
-//
-//            while((singleCharInt = fileInputStream.read()) != -1) {
-//                singleChar = (char) singleCharInt;
-//                System.out.print(singleChar);
-//            }
-//        }
-//    }
+
+    public static String[] ReadClassesFile() throws IOException {
+        File file = new File("classes.bin");
+        boolean exists = file.exists();
+        String[] Classes = new String[CalculateArraySize() + 1];
+
+        if (exists) {
+            try (FileInputStream fileInputStream = new FileInputStream(file)) {
+                int singleCharInt;
+                char singleChar;
+                String current_class = "";
+                char test = '/';
+                int i = 0;
+
+                while ((singleCharInt = fileInputStream.read()) != -1) {
+                    singleChar = (char) singleCharInt;
+                    current_class += singleChar;
+                    if (singleChar == test) {
+                        if (i != 0) {
+                            current_class = current_class.substring(3, current_class.length());
+                        }
+                        // System.out.println(current_class);
+                        // current_class = current_class.replaceAll("\n", "");
+                        Classes[i] = current_class;
+                        current_class = "";
+                        i++;
+                    }
+                }
+
+                String[][] arr_arr = new String[CalculateArraySize()][19];
+
+
+                for (int ii = 0; ii < Classes.length - 1; ii++) {
+                    if (Classes[ii] != null) {
+                        String[] temp = Classes[ii].split("\n");
+                        arr_arr[ii] = temp;
+                    }
+                }
+
+                for (int j = 0; j < arr_arr.length; j++) {
+                    if (arr_arr[j] != null) {
+                        Class course1 = new Class();
+                        for (int jj = 0; jj < arr_arr[0].length; jj++) {
+                            if (jj == 0) {
+                                course1.ClassName = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            if (jj == 1) {
+                                course1. = arr_arr[j][jj];
+                            }
+                            
+                            System.out.println(arr_arr[j][jj]);
+                        }
+                        CoursesLinkedList.add(course1);
+                    }
+                }
+            }
+        }
+        return Classes;
+    }
+
 }

@@ -26,7 +26,7 @@ public class WriteBinaryFile {
                 out.write(String.valueOf(classtotext.Total) + "\n");
                 out.write(String.valueOf(classtotext.ScoreWanted) + "\n");
                 out.write(String.valueOf(classtotext.FinalScoreNeeded) + "\n");
-                out.write("/ \n");
+                out.write("/");
                 out.flush();
                 fos.close();
         }

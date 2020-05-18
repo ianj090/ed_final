@@ -18,8 +18,8 @@ public class MainController {
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String fullDash(Model model) throws IOException {
         if (readFileFlag == 0) {
-            ReadBinaryFile.ReadFile("classes");
-            ReadBinaryFile.ReadFile("assignments");
+            ReadBinaryFile.ReadClassesFile();
+//            ReadBinaryFile.ReadFile("assignments");
             readFileFlag = 1;
         }
 //        System.out.println(ReadBinaryFile.ReadFile("classes"));
