@@ -78,51 +78,51 @@ public class ReadBinaryFile {
                                 course1.ClassName = arr_arr[j][jj];
                             }
                             if (jj == 1) {
+                                course1.Descripcion = arr_arr[j][jj];
+                            }
+                            if (jj == 2) {
+                                course1.Teacher = arr_arr[j][jj];
+                            }
+                            if (jj == 3) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 4) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 5) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 6) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 7) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 8) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 9) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 10) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 11) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 12) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 13) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 14) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
+                            if (jj == 15) {
                                 course1. = arr_arr[j][jj];
                             }
-                            if (jj == 1) {
-                                course1. = arr_arr[j][jj];
-                            }
-                            if (jj == 1) {
-                                course1. = arr_arr[j][jj];
-                            }
-                            if (jj == 1) {
+                            if (jj == 16) {
                                 course1. = arr_arr[j][jj];
                             }
                             
