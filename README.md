@@ -114,41 +114,57 @@ Online Class Management System
 | Searching and Sorting |  Classes |
 | Files and Their Organization |  Folders within Classes containing Class Information |
 
-# Profiling
+# Load testing
 ## /addAssignment
-![](./profiling/results_images/addAssignment/Graph_Results.PNG)
-![](./profiling/results_images/addAssignment/Results_Tree.PNG)
+![](./profiling&load/results_images/addAssignment/Graph_Results.PNG)
+![](./profiling&load/results_images/addAssignment/Results_Tree.PNG)
 
 ## /addClass
-![](./profiling/results_images/addClass/Graph_Results.PNG)
-![](./profiling/results_images/addClass/Results_Tree.PNG)
+![](./profiling&load/results_images/addClass/Graph_Results.PNG)
+![](./profiling&load/results_images/addClass/Results_Tree.PNG)
 
 ## /addNewAssignment
-![](./profiling/results_images/addNewAssignment/Graph_Results.PNG)
-![](./profiling/results_images/addNewAssignment/Results_Tree.PNG)
+![](./profiling&load/results_images/addNewAssignment/Graph_Results.PNG)
+![](./profiling&load/results_images/addNewAssignment/Results_Tree.PNG)
 
 ## /addNewClass
-![](./profiling/results_images/addNewClass/Graph_Results.PNG)
-![](./profiling/results_images/addNewClass/Results_Tree.PNG)
+![](./profiling&load/results_images/addNewClass/Graph_Results.PNG)
+![](./profiling&load/results_images/addNewClass/Results_Tree.PNG)
 
 ## /classInformation
-![](./profiling/results_images/classInformation/Graph_Results.PNG)
-![](./profiling/results_images/classInformation/Results_Tree.PNG)
+![](./profiling&load/results_images/classInformation/Graph_Results.PNG)
+![](./profiling&load/results_images/classInformation/Results_Tree.PNG)
 
 ## /dash
-![](./profiling/results_images/dash/Graph_Results.PNG)
-![](./profiling/results_images/dash/Results_Tree.PNG)
+![](./profiling&load/results_images/dash/Graph_Results.PNG)
+![](./profiling&load/results_images/dash/Results_Tree.PNG)
 
 ## /deleteAssignment
-![](./profiling/results_images/deleteAssignment/Graph_Results.PNG)
-![](./profiling/results_images/deleteAssignment/Results_Tree.PNG)
+![](./profiling&load/results_images/deleteAssignment/Graph_Results.PNG)
+![](./profiling&load/results_images/deleteAssignment/Results_Tree.PNG)
 
 ## /deleteClass
-![](./profiling/results_images/deleteClass/Graph_Results.PNG)
-![](./profiling/results_images/deleteClass/Results_Tree.PNG)
+![](./profiling&load/results_images/deleteClass/Graph_Results.PNG)
+![](./profiling&load/results_images/deleteClass/Results_Tree.PNG)
 
-![](./profiling/results_images/saveClass/Graph_Results.PNG)
-![](./profiling/results_images/saveClass/Results_Tree.PNG)
+![](./profiling&load/results_images/saveClass/Graph_Results.PNG)
+![](./profiling&load/results_images/saveClass/Results_Tree.PNG)
+
+## /gradeManager
+![](./profiling&load/results_images/gradeManager/GraphResults.PNG)
+![](./profiling&load/results_images/gradeManager/ResultsTree.PNG)
+
+
+## /schedule
+![](./profiling&load/results_images/schedule/Graph_results.png)
+![](./profiling&load/results_images/schedule/Results_tree.png)
+
+
+
+# Profiling
+Directory -> profiling&load\Profiling.jps
+![](./profiling&load/results_images/profilingImages/profile.jpeg)
+![](./profiling&load/results_images/profilingImages/profiler.jpeg)
 
 # Unit Testing
 Todos los métodos y objetos se probaron en el método contextloads() que retornó un valor satisfactorio.
