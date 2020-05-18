@@ -8,24 +8,24 @@ public class WriteBinaryFile {
                 FileOutputStream fos = new FileOutputStream("classes.bin", true);
                 OutputStreamWriter osw = new OutputStreamWriter(fos);
                 BufferedWriter out = new BufferedWriter(osw); /*new BufferedWriter(osw,true);*/
-                out.write(classtotext.ClassName + "\n");
-                out.write(classtotext.Descripcion + "\n");
+                out.write(classtotext.ClassName + "\n"); //0
+                out.write(classtotext.Descripcion + "\n");//1
                 // out.write(classtotext.ClassActivities + "\n");
-                out.write(classtotext.Teacher + "\n");
-                out.write(classtotext.TA + "\n");
-                out.write(String.valueOf(classtotext.Credits) + "\n");
-                out.write(classtotext.Descripcion + "\n");
-                out.write(classtotext.Period + "\n");
-                out.write(classtotext.WeekDay + "\n");
-                out.write(String.valueOf(classtotext.HomeWork) + "\n");
-                out.write(String.valueOf(classtotext.ClassWork) + "\n");
-                out.write(String.valueOf(classtotext.Quiz) + "\n");
-                out.write(String.valueOf(classtotext.Test) + "\n");
-                out.write(String.valueOf(classtotext.Final) + "\n");
-                out.write(String.valueOf(classtotext.Score) + "\n");
-                out.write(String.valueOf(classtotext.Total) + "\n");
-                out.write(String.valueOf(classtotext.ScoreWanted) + "\n");
-                out.write(String.valueOf(classtotext.FinalScoreNeeded) + "\n");
+                out.write(classtotext.Teacher + "\n");//2
+                out.write(classtotext.TA + "\n");//3
+                out.write(String.valueOf(classtotext.Credits) + "\n");//4
+//                out.write(classtotext.Descripcion + "\n");
+                out.write(classtotext.Period + "\n");//5
+                out.write(classtotext.WeekDay + "\n");//6
+                out.write(String.valueOf(classtotext.HomeWork) + "\n");//7
+                out.write(String.valueOf(classtotext.ClassWork) + "\n");//8
+                out.write(String.valueOf(classtotext.Quiz) + "\n");//9
+                out.write(String.valueOf(classtotext.Test) + "\n");//10
+                out.write(String.valueOf(classtotext.Final) + "\n");//11
+                out.write(String.valueOf(classtotext.Score) + "\n");//12
+                out.write(String.valueOf(classtotext.Total) + "\n");//13
+                out.write(String.valueOf(classtotext.ScoreWanted) + "\n");//14
+                out.write(String.valueOf(classtotext.FinalScoreNeeded) + "\n");//15
                 out.write("/");
                 out.flush();
                 fos.close();

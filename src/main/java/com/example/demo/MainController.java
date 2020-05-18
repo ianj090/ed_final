@@ -132,6 +132,7 @@ public class MainController {
 
         ScheduleBTree.BinaryTree.clear();
         for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+            ScheduleBTree.BinaryTree.calculateTime(CoursesLinkedList.coursesArray[i]);
             ScheduleBTree.BinaryTree.add(CoursesLinkedList.coursesArray[i]);
         }
 
