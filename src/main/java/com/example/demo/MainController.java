@@ -22,14 +22,30 @@ public class MainController {
             ReadBinaryFileAssignment.ReadAssignmentsFile();
             readFileFlag = 1;
         }
-//        System.out.println(ReadBinaryFile.ReadFile("classes"));
+//        stored.findScore();
+//        stored.findTotal();
+//        stored.findaverages();
+//        stored.findScoreWanted();
+//        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
+//            CoursesLinkedList.coursesArray[i].findScore();
+//        }
+
         model.addAttribute("classes", CoursesLinkedList.toArray());
         WriteBinaryFile.ClearFile("classes");
+        WriteBinaryFile.ClearFile("assignments");
         for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
             if (CoursesLinkedList.coursesArray[i] != null) {
                 WriteBinaryFile.WriteClassFile(CoursesLinkedList.coursesArray[i]);
+                if (CoursesLinkedList.coursesArray[i].ClassActivities != null) {
+                    for (int j = 0; j < CoursesLinkedList.coursesArray[i].ClassActivities.assignmentArray.length; j++) {
+                        if (CoursesLinkedList.coursesArray[i].ClassActivities.assignmentArray[j] != null) {
+                            WriteBinaryFile.WriteAssignmentFile(CoursesLinkedList.coursesArray[i], CoursesLinkedList.coursesArray[i].ClassActivities.assignmentArray[j]);
+                        }
+                    }
+                }
             }
         }
+
         model.addAttribute("stored_class", new Class());
         return "resultDash";
     }
@@ -67,15 +83,10 @@ public class MainController {
     }
 
     @RequestMapping(value="/classInformation", method=RequestMethod.GET)
-    public String classInformation(Model model) throws IOException {
+    public String classInformation(Model model) {
 //        ReadBinaryFile.ReadFile("assignments");
         model.addAttribute("assignments", saved_class.ClassActivities.toArray());
-        WriteBinaryFile.ClearFile("assignments");
-        for (int i=0; i<saved_class.ClassActivities.assignmentArray.length; i++) {
-            if (saved_class.ClassActivities.assignmentArray[i] != null) {
-                WriteBinaryFile.WriteAssignmentFile(saved_class, saved_class.ClassActivities.assignmentArray[i]);
-            }
-        }
+
         model.addAttribute("stored_assignment", new Assignment());
         return "classInformation";
     }

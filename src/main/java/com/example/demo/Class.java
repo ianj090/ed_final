@@ -491,6 +491,7 @@ public class Class {
     public void findScore() {
         if (Total != 0.0f) {
             Score = (avgHomeWork * (HomeWork/Total)) + (avgClassWork * (ClassWork/Total)) + (avgQuiz * (Quiz/Total)) + (avgTest * (Test/Total)) + (avgFinal * (Final/Total));
+            Score = Math.round(Score * 100.0f)/100.0f;
         }
     }
 

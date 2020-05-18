@@ -52,7 +52,7 @@ public class ReadBinaryFileAssignment {
                     current_assignment += singleChar;
                     if (singleChar == test) {
                         if (i != 0) {
-                            current_assignment = current_assignment.substring(3, current_assignment.length());
+//                            current_assignment = current_assignment.substring(3, current_assignment.length());
                         }
                         // System.out.println(current_assignment);
                         // current_assignment = current_assignment.replaceAll("\n", "");
@@ -99,9 +99,6 @@ public class ReadBinaryFileAssignment {
                             if (jj == 6){
                                 assignment1.ScoreOfThisActivity = Double.valueOf(arr_arr[j][jj]);
                             }
-                        
-                            System.out.println(arr_arr[j][jj]);
-
                         }
                         System.out.println(ClassName);
                         Class stored = CoursesLinkedList.find(ClassName);
@@ -110,6 +107,14 @@ public class ReadBinaryFileAssignment {
                         System.out.println(stored.WeekDay);
                         stored.ClassActivities = new AssignmentLinkedList();
                         stored.ClassActivities.add(assignment1);
+                        stored.ClassActivities.toArray();
+                        stored.findTotal();
+                        stored.findaverages();
+                        stored.findScore();
+                        stored.findScoreWanted();
+                        for (int k=0; k<stored.ClassActivities.assignmentArray.length; k++) {
+                            System.out.println(stored.ClassActivities.assignmentArray[k]);
+                        }
                     }
                 }
             }
