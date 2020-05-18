@@ -84,46 +84,46 @@ public class ReadBinaryFile {
                                 course1.Teacher = arr_arr[j][jj];
                             }
                             if (jj == 3) {
-                                course1. = arr_arr[j][jj];
+                                course1.TA = arr_arr[j][jj];
                             }
                             if (jj == 4) {
-                                course1. = arr_arr[j][jj];
+                                course1.Credits = arr_arr[j][jj];
                             }
                             if (jj == 5) {
-                                course1. = arr_arr[j][jj];
+                                course1.WeekDay = arr_arr[j][jj];
                             }
                             if (jj == 6) {
-                                course1. = arr_arr[j][jj];
+                                course1.Period = arr_arr[j][jj];
                             }
                             if (jj == 7) {
-                                course1. = arr_arr[j][jj];
+                                course1.HomeWork = arr_arr[j][jj];
                             }
                             if (jj == 8) {
-                                course1. = arr_arr[j][jj];
+                                course1.ClassWork = arr_arr[j][jj];
                             }
                             if (jj == 9) {
-                                course1. = arr_arr[j][jj];
+                                course1.Quiz = arr_arr[j][jj];
                             }
                             if (jj == 10) {
-                                course1. = arr_arr[j][jj];
+                                course1.Test = arr_arr[j][jj];
                             }
                             if (jj == 11) {
-                                course1. = arr_arr[j][jj];
+                                course1.Final = arr_arr[j][jj];
                             }
                             if (jj == 12) {
-                                course1. = arr_arr[j][jj];
+                                course1.ScoreWanted = arr_arr[j][jj];
                             }
                             if (jj == 13) {
-                                course1. = arr_arr[j][jj];
+                                course1.Score = arr_arr[j][jj];
                             }
                             if (jj == 14) {
-                                course1. = arr_arr[j][jj];
+                                course1.ScoreWithoutFinal = arr_arr[j][jj];
                             }
                             if (jj == 15) {
-                                course1. = arr_arr[j][jj];
+                                course1.FinalScoreNeeded = arr_arr[j][jj];
                             }
                             if (jj == 16) {
-                                course1. = arr_arr[j][jj];
+                                course1.Total = arr_arr[j][jj];
                             }
                             
                             System.out.println(arr_arr[j][jj]);
