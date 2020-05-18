@@ -117,12 +117,9 @@ public class ReadBinaryFile {
                                 course1.Score = Float.valueOf(arr_arr[j][jj]);
                             }
                             if (jj == 14) {
-                                course1.ScoreWithoutFinal = Float.valueOf(arr_arr[j][jj]);
-                            }
-                            if (jj == 15) {
                                 course1.FinalScoreNeeded = Float.valueOf(arr_arr[j][jj]);
                             }
-                            if (jj == 16) {
+                            if (jj == 15) {
                                 course1.Total = Float.valueOf(arr_arr[j][jj]);
                             }
                             

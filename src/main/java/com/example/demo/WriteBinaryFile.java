@@ -22,10 +22,10 @@ public class WriteBinaryFile {
                 out.write(String.valueOf(classtotext.Quiz) + "\n");//9
                 out.write(String.valueOf(classtotext.Test) + "\n");//10
                 out.write(String.valueOf(classtotext.Final) + "\n");//11
-                out.write(String.valueOf(classtotext.Score) + "\n");//12
-                out.write(String.valueOf(classtotext.Total) + "\n");//13
                 out.write(String.valueOf(classtotext.ScoreWanted) + "\n");//14
+                out.write(String.valueOf(classtotext.Score) + "\n");//12
                 out.write(String.valueOf(classtotext.FinalScoreNeeded) + "\n");//15
+                out.write(String.valueOf(classtotext.Total) + "\n");//13
                 out.write("/");
                 out.flush();
                 fos.close();
