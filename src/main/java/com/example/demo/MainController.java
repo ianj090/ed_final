@@ -19,7 +19,7 @@ public class MainController {
     public String fullDash(Model model) throws IOException {
         if (readFileFlag == 0) {
             ReadBinaryFile.ReadClassesFile();
-//            ReadBinaryFile.ReadFile("assignments");
+            ReadBinaryFileAssignment.ReadAssignmentsFile();
             readFileFlag = 1;
         }
 //        System.out.println(ReadBinaryFile.ReadFile("classes"));
