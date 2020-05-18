@@ -50,7 +50,7 @@ public class ReadBinaryFile {
                     current_class += singleChar;
                     if (singleChar == test) {
                         if (i != 0) {
-                            current_class = current_class.substring(3, current_class.length());
+//                            current_class = current_class.substring(1, current_class.length());
                         }
                         // System.out.println(current_class);
                         // current_class = current_class.replaceAll("\n", "");
@@ -90,7 +90,7 @@ public class ReadBinaryFile {
                                 course1.Credits = Float.valueOf(arr_arr[j][jj]);
                             }
                             if (jj == 5) {
-                                course1.Period = Integer.valueOf(arr_arr[j][jj]);
+                                course1.Period = Integer.valueOf(arr_arr[j][jj].trim());
                             }
                             if (jj == 6) {
                                 course1.WeekDay = arr_arr[j][jj];
@@ -122,17 +122,13 @@ public class ReadBinaryFile {
                             if (jj == 15) {
                                 course1.Total = Float.valueOf(arr_arr[j][jj]);
                             }
-                            
-                            System.out.println(arr_arr[j][jj]);
                         }
+                        course1.ClassActivities = new AssignmentLinkedList();
                         CoursesLinkedList.add(course1);
                     }
                 }
             }
         }
         return Classes;
-    }
-    public static void main(String[] args) throws IOException {
-        ReadClassesFile();
     }
 }
