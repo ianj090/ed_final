@@ -22,13 +22,6 @@ public class MainController {
             ReadBinaryFileAssignment.ReadAssignmentsFile();
             readFileFlag = 1;
         }
-//        stored.findScore();
-//        stored.findTotal();
-//        stored.findaverages();
-//        stored.findScoreWanted();
-//        for (int i=0; i<CoursesLinkedList.coursesArray.length; i++) {
-//            CoursesLinkedList.coursesArray[i].findScore();
-//        }
 
         model.addAttribute("classes", CoursesLinkedList.toArray());
         WriteBinaryFile.ClearFile("classes");

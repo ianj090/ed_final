@@ -171,6 +171,12 @@ Todos los métodos y objetos se probaron en el método contextloads() que retorn
 
 ![](./unit/unit_test.PNG)
 
+# Video de comprobación de funcionamiento
+```
+https://youtu.be/3WqZLZw-SdI
+```
+
+
 # Diagrama de objetos
 ## Assignment Object
 Este se encarga de almacenar tareas académicas en la applicación, almacena:
